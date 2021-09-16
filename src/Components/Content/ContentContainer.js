@@ -7,7 +7,10 @@ export default class ContentContainer extends Component {
         return (
             <div className="content-container">
                 <SearchContainer/>
-                <WindowContainer/>
+                <WindowContainer 
+                    data={this.props.data} 
+                    handleUpvote={this.props.handleUpvote}
+                />
             </div>
         )
     }

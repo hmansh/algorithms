@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import CompanyInstance from "./CompanyInstance";
-import Data from "../../Constants/ApplicationData";
 
 export default class CompaniesContainer extends Component {
     render() {
         return (
             <div className="companies-container">
                 <div className="company-instance-container">
-                    {Data.map(item => <CompanyInstance
+                    {this.props.data.map((item, index) => <CompanyInstance
                         src={item.img_src}
                         name={item.name}
                         count={item.upvotes}
-                        tags={item.tags}
+                        desc={item.desc}
+                        key={'key_'+index}
+                        uid={item.uid}
+                        handleUpvote={this.props.handleUpvote}
                     />)}
                 </div>
             </div>

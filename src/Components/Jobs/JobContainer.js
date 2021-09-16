@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import JobInstance from './JobInstance';
-
+import { Link } from 'react-router-dom';
 export default class JobContainer extends Component {
     render() {
         return (
@@ -9,7 +9,11 @@ export default class JobContainer extends Component {
                     Jobs
                 </div>
                 <div className="job-instance-container">
-                    {[1,2,3,4,5,6,7].map(item => <JobInstance/>)}
+                    {[1,2,3,4,5,6,7].map(item => 
+                        <Link to="/job">
+                            <JobInstance />
+                        </Link>
+                    )}
                 </div>
                 <button className="view-all-job-btn btn">
                     View all Openings

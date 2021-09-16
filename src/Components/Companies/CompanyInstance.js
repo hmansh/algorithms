@@ -13,11 +13,11 @@ export default class CompanyInstance extends Component {
                         {this.props.name}
                     </div>
                     <div className="company-instance-bio">
-                        {this.props.tags}
+                        {this.props.desc}
                     </div>
                 </div>
                 <div className="company-upvote-count">
-                    <UpvoteButton count={this.props.count}/>
+                    <UpvoteButton count={this.props.count} uid={this.props.uid} handleUpvote={this.props.handleUpvote}/>
                 </div>
             </div>
         )

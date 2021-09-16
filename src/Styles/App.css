@@ -261,10 +261,12 @@ body {
   align-items: center;
 }
 
-.company-instance-logo-img {
+.company-instance-logo > img {
   height: 80%;
   margin: 10px auto;
   border-radius: 50%;
+  max-width: 80%;
+  object-fit: contain;
 }
 
 .company-instance-desc {
