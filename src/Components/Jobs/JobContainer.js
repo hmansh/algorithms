@@ -10,13 +10,13 @@ export default class JobContainer extends Component {
                 </div>
                 <div className="job-instance-container">
                     {[1,2,3,4,5,6,7].map(item => 
-                        <Link to="/job">
+                        <Link to="/job" className="path-link">
                             <JobInstance />
                         </Link>
                     )}
                 </div>
                 <button className="view-all-job-btn btn">
-                    View all Openings
+                    View more Openings
                 </button>
             </div>
         )

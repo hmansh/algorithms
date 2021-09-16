@@ -15,6 +15,9 @@ export default class CompaniesContainer extends Component {
                         uid={item.uid}
                         handleUpvote={this.props.handleUpvote}
                     />)}
+                    <button className="more-companies-btn btn">
+                        View more Companies
+                    </button>
                 </div>
             </div>
         )

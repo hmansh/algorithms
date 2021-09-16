@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import companyLogo from "../../Assets/printlogo.png";
-
+import { Link } from "react-router-dom";
 export default class JobProfileComponent extends Component {
     render() {
         return (
@@ -35,7 +35,9 @@ export default class JobProfileComponent extends Component {
                     </div>
                 </div>
                 <div className="application-btn">
-                    <button className="company-website btn">Website</button>
+                    <Link to="/" className="path-link">
+                        <button className="company-website btn">Back</button>
+                    </Link>
                     <button className="job-profile-apply btn">Apply</button>
                 </div>
             </div>

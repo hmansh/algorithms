@@ -5,7 +5,7 @@ export default class CompanyLogo extends Component {
         return (
             <div className="logo-container">
                 <div className="logo-c">
-                    C
+                    <div className="c-text">C</div>
                 </div>
                 <div className="logo-text">
                     Hunt

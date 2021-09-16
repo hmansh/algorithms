@@ -10,6 +10,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       data : [],
+      search : false,
+      searchResult: [],
     }
     this.handleUpvote = this.handleUpvote.bind(this);
   }
