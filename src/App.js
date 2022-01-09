@@ -135,14 +135,22 @@ export default function App() {
             </DrawerHeader>
             <Divider/>
             <MyList>
-              {["Merge Two Linked Lists", "Add Two Linked List", "Traverse Linked List"].map((text, index) => (
+              {[
+                "Random Topic", "Random Topic",
+                "Random Topic", "Random Topic",
+                "Random Topic", "Random Topic",
+                "Random Topic", "Random Topic",
+              ].map((text, index) => (
                   <ListItem button key={text}>
-                      <ListItemText primary={text} />
+                      <ListItemText primary={text + " " + index} />
                   </ListItem>
               ))}
             </MyList>
           </Drawer>
-          <Main open={drawerOpen}>
+          <Main open={drawerOpen} style={{
+            backgroundImage: "radial-gradient(#323232 1px, transparent 0)",
+            backgroundSize: "25px 25px",
+          }}>
               <DrawerHeader/>
               <div className='view'>
                 <View/>
