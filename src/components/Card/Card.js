@@ -3,26 +3,29 @@ import Typography from '@mui/material/Typography';
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import COLORS from '../../utils/Colors';
 
-export default function ContentCard() {
+export default function ContentCard(props) {
+    const { color } = props;
     return (
         <div style={{height: '100%'}}>
             <Card sx={{
-                // border: "1px solid #353535",
-                background: '#131313',
-                height: '100%'}}>
+                    border: "1px solid #353535",
+                    background: 'none',
+                    cursor: 'pointer',
+                    height: '100%'}}>
                 <CardMedia
                     component="img"
                     // alt="green iguana"
-                    height="90"
+                    height="40"
                     // image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpCZDBG_GkepLlVovwn816LyPKRR6NC5N2sg&usqp=CAU"
-                    sx={{background:"white"}}
+                    sx={{background:color}}
                 />
-                <CardContent sx={{background: "#131313", color: 'white'}}>
+                <CardContent sx={{background: "#131313", color: color}}>
                     <Typography gutterBottom variant="h4" component="div">
                         Linked List
                     </Typography>
-                    <Typography sx={{color: "white", fontSize: '0.9em'}}>
+                    <Typography sx={{color: "white", fontSize: '0.8em'}}>
                         A linked list is a linear collection of data elements whose
                         order is not given by their physical placement in memory.
                         Instead, each element points to the next.
