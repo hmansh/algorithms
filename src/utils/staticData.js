@@ -91,3 +91,55 @@ export const dataStructureTopics = [
         color: COLORS.yellow
     },
 ];
+
+export const algorithmsTopics = [
+    {
+        topic: 'Recursion',
+        slug: 'recursion',
+        desc: 'A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next.',
+        api: 'recursion.do',
+        color: COLORS.red
+    },
+    {
+        topic: 'Dynamic Programming',
+        slug: 'dynamic-programming',
+        desc: 'A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next.',
+        api: 'dp.do',
+        color: COLORS.yellow
+    },
+    {
+        topic: 'Backtracking',
+        slug: 'backtracking',
+        desc: 'A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next.',
+        api: 'Backtracking.do',
+        color: COLORS.blue
+    },
+    {
+        topic: 'Greedy',
+        slug: 'greedy',
+        desc: 'A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next.',
+        api: 'greedy.do',
+        color: COLORS.green
+    },
+    {
+        topic: 'Divide and Conquer',
+        slug: 'divide-and-conquer',
+        desc: 'A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next.',
+        api: 'dandc.do',
+        color: COLORS.orange
+    },
+    {
+        topic: 'Sorting',
+        slug: 'sorting',
+        desc: 'A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next.',
+        api: 'sorting.do',
+        color: COLORS.blue
+    },
+    {
+        topic: 'Graphs Algorithms',
+        slug: 'graphs-algos',
+        desc: 'A linked list is a linear collection of data elements whose order is not given by their physical placement in memory. Instead, each element points to the next.',
+        api: 'graphsAlgorithms.do',
+        color: COLORS.blue
+    },
+]

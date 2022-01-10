@@ -7,17 +7,22 @@ import Grid from '@mui/material/Grid';
 import "../styles/App.css";
 import Typography from "@mui/material/Typography";
 import ContentCard from '../components/Card/Card.js';
+import { Link } from "react-router-dom";
 
-export default function Dashboard() {
+export default function Dashboard(props) {
     return (
         <div>
             <Grid container rowSpacing={2} columnSpacing={2} columns={{ xs: 1, sm: 2 }} gutterBottom>
                 {dashboardCardsData.map(item => (
                     <Grid item xs={1} sm={1} sx={{ height: '27vh' }}>
-                        <DashboardCard
-                            title={item.title}
-                            slug={item.slug}
-                        />
+                        <Link to='/topics' style={{textDecoration: 'none'}} key={item.slug}>
+                            <DashboardCard
+                                title={item.title}
+                                slug={item.slug}
+                                onClick={() => console.log(item)}
+                                key={item.slug}
+                            />
+                        </Link>
                     </Grid>
                 ))}
             </Grid>
@@ -35,7 +40,7 @@ export default function Dashboard() {
                             slug={item.slug}
                             desc={item.desc}
                             api={item.api}
-                            color={item.color}
+                            color={item.color}        
                         />
                     </Grid>
                 ))}
