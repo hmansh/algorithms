@@ -1,16 +1,9 @@
 import React from 'react';
 import "./styles/App.css";
-import {
-  Route,
-  Routes,
-  BrowserRouter as Router
-} from "react-router-dom";
-import { styled, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
@@ -19,7 +12,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import COLORS from './utils/Colors';
 import View from "./components/View/View";
-import {MyList, AppBar, DrawerHeader, Main} from './components/CustomComponents/CustomComponents';
+import { MyList, AppBar, DrawerHeader, Main } from './components/CustomComponents/CustomComponents';
+import { BrowserRouter } from 'react-router-dom';
 
 const drawerWidth = 350;
 
@@ -95,7 +89,9 @@ export default function App() {
           }}>
               <DrawerHeader/>
               <div className='view'>
-                <View/>
+                <BrowserRouter>
+                  <View/>
+                </BrowserRouter>
               </div>
           </Main>
         </Box>
