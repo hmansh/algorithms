@@ -1,6 +1,5 @@
 import React from 'react';
 import Typography from "@mui/material/Typography";
-import { styled, useTheme } from "@mui/material/styles";
 import Grid from '@mui/material/Grid';
 import ContentCard from '../Card/Card.js';
 import Toolbar from "@mui/material/Toolbar";
@@ -12,36 +11,24 @@ import Link from '@mui/material/Link';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import IconButton from "@mui/material/IconButton";
 import ShareIcon from '@mui/icons-material/Share';
-import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import ReactMarkdown from 'react-markdown';
 import "../../styles/App.css";
+import { MyButton } from '../CustomComponents/CustomComponents';
+import { dashboardCardsData, dataStructureTopics } from '../../utils/staticData';
 
 const HomePage = () => {
     return (
         <>
             <Grid container rowSpacing={2} columnSpacing={2} columns={{ xs: 1, sm: 2 }} gutterBottom>
-                <Grid item xs={1} sm={1} sx={{
-                    height: '27vh'
-                }}>
-                    <DashboardCard />
-                </Grid>
-                <Grid item xs={1} sm={1} sx={{
-                    height: '27vh'
-                }}>
-                    <DashboardCard />
-                </Grid>
-                <Grid item xs={1} sm={1} sx={{
-                    height: '27vh'
-                }}>
-                    <DashboardCard />
-                </Grid>
-                <Grid item xs={1} sm={1}
-                    sx={{
-                        height: '27vh'
-                    }}>
-                    <DashboardCard />
-                </Grid>
+                {dashboardCardsData.map(item => (
+                    <Grid item xs={1} sm={1} sx={{height: '27vh'}}>
+                        <DashboardCard 
+                            title={item.title}
+                            slug={item.slug}
+                        />
+                    </Grid>
+                ))}
             </Grid>
             <Toolbar>
                 <Typography variant="h6" noWrap component="div" >
@@ -50,26 +37,17 @@ const HomePage = () => {
                 <ChevronRightIcon />
             </Toolbar>
             <Grid container rowSpacing={2} columnSpacing={2} columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} gutterBottom>
-                <Grid item xs={1} sm={1}>
-                    <ContentCard
-                        color={COLORS.orange}
-                    />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                    <ContentCard
-                        color={COLORS.yellow}
-                    />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                    <ContentCard
-                        color={COLORS.blue}
-                    />
-                </Grid>
-                <Grid item xs={1} sm={1}>
-                    <ContentCard
-                        color={COLORS.green}
-                    />
-                </Grid>
+                {dataStructureTopics.slice(0, 4).map(item => (
+                    <Grid item xs={1} sm={1}>
+                        <ContentCard
+                            topic={item.topic}
+                            slug={item.slug}
+                            desc={item.desc}
+                            api={item.api}
+                            color={item.color}
+                        />
+                    </Grid>
+                ))}
             </Grid>
         </>
     )
@@ -91,14 +69,6 @@ const breadcrumbs = [
         Merge Two Linked Lists
     </Typography>,
 ];
-
-const MyButton = styled(Button)(({ theme, c }) => ({
-    color: c,
-    backgroundColor: '#2C2C2E',
-    '&:hover': {
-        backgroundColor: '#545454',
-    },
-}));
 
 const ArticlePage = (text) => {
     return (
@@ -136,7 +106,7 @@ const ArticlePage = (text) => {
                     edge="state"
                     disableRipple
                 >
-                    <ShareIcon sx={{paddingRight: 1}}/>
+                    <ShareIcon sx={{ paddingRight: 1 }} />
                     <Typography> Share</Typography>
                 </IconButton>
             </div>
@@ -155,7 +125,19 @@ const ArticlePage = (text) => {
 const GridPage = () => {
     return (
         <div className='grid-container'>
-            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
+            <div className='grid-item'><ContentCard /></div>
         </div>
     );
 }
@@ -190,7 +172,7 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 `;
     return (
         <div>
-            {GridPage()}
+            {HomePage()}
         </div>
     )
 }

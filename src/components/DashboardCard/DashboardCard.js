@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 
 
 export default function DashboardCard(props) {
-    const { color } = props;
+    const { title, slug } = props;
     return (
         <div style={{height: '100%'}}>
             <Card sx={{
@@ -14,9 +14,9 @@ export default function DashboardCard(props) {
                     backgroundSize: "20px 20px",
                     cursor: 'pointer',
                     height: '100%'}}>
-                <CardContent sx={{background: "none", color: color, height: '100%'}}>
-                    <Typography gutterBottom variant="h2" component="div">
-                        Algorithms
+                <CardContent sx={{background: "none", height: '100%'}}>
+                    <Typography gutterBottom variant="h2" component="div" to={slug}>
+                        {title}
                     </Typography>
                 </CardContent>
             </Card>
