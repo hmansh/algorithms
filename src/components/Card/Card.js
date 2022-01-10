@@ -21,7 +21,7 @@ export default function ContentCard(props) {
                     <Typography gutterBottom variant="h4" component="div">
                         Linked List
                     </Typography>
-                    <div style={{ border: '1px solid red', maxHeight: '55%'}}>
+                    <div style={{ maxHeight: '55%'}}>
                         <Typography sx={{color: "white", fontSize: '0.8em', whiteSpace: 'no-wrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
                             A linked list is a linear collection of data elements whose
                             order is not given by their physical placement in memory.
