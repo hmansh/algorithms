@@ -152,6 +152,14 @@ const ArticlePage = (text) => {
     )
 }
 
+const GridPage = () => {
+    return (
+        <div className='grid-container'>
+            <div className='grid-item'><ContentCard/></div>
+        </div>
+    );
+}
+
 export default function View() {
     const text = `
 ### Subheading One
@@ -181,19 +189,8 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 #
 `;
     return (
-        <div className='grid-container'>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
-            <div className='grid-item'><ContentCard/></div>
+        <div>
+            {GridPage()}
         </div>
     )
 }

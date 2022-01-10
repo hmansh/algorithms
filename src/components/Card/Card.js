@@ -15,20 +15,19 @@ export default function ContentCard(props) {
                     cursor: 'pointer',
                     height: '100%'}}>
                 <CardMedia
-                    component="img"
-                    // alt="green iguana"
-                    // image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpCZDBG_GkepLlVovwn816LyPKRR6NC5N2sg&usqp=CAU"
-                    sx={{background:color, height: '30%'}}
+                    sx={{background: color || '#fff', height: '30%'}}
                 />
-                <CardContent sx={{background: "#131313", color: color, height: '70%'}}>
+                <CardContent sx={{background: "#131313", color: color || '#fff', height: '70%'}}>
                     <Typography gutterBottom variant="h4" component="div">
                         Linked List
                     </Typography>
-                    <Typography sx={{color: "white", fontSize: '0.8em'}}>
-                        A linked list is a linear collection of data elements whose
-                        order is not given by their physical placement in memory.
-                        Instead, each element points to the next.
-                    </Typography>
+                    <div style={{ border: '1px solid red', maxHeight: '55%'}}>
+                        <Typography sx={{color: "white", fontSize: '0.8em', whiteSpace: 'no-wrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
+                            A linked list is a linear collection of data elements whose
+                            order is not given by their physical placement in memory.
+                            Instead, each element points to the next.
+                        </Typography>
+                    </div>
                 </CardContent>
             </Card>
         </div>
