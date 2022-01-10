@@ -14,6 +14,8 @@ import IconButton from "@mui/material/IconButton";
 import ShareIcon from '@mui/icons-material/Share';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import ReactMarkdown from 'react-markdown';
+import "../../styles/App.css";
 
 const HomePage = () => {
     return (
@@ -98,9 +100,14 @@ const MyButton = styled(Button)(({ theme, c }) => ({
     },
 }));
 
-const ArticlePage = () => {
+const ArticlePage = (text) => {
     return (
-        <div>
+        <div
+            style={{
+                maxWidth: '720px',
+                margin: 'auto'
+            }}
+        >
             <Breadcrumbs
                 sx={{ color: 'white' }}
                 separator={<NavigateNextIcon fontSize="small" />}
@@ -127,27 +134,55 @@ const ArticlePage = () => {
                 <IconButton
                     color="inherit"
                     edge="state"
+                    disableRipple
                 >
-                    <ShareIcon />
+                    <ShareIcon sx={{paddingRight: 1}}/>
                     <Typography> Share</Typography>
                 </IconButton>
             </div>
-            <div className='article'>
-
+            <div className='article' style={{ padding: '10px' }}>
+                <ReactMarkdown>{text}</ReactMarkdown>
             </div>
             <Stack spacing={1} direction="row">
-                {/* <MyButton variant="contained" c='#FF2D55' disableElevation>CODEFORCES</MyButton> */}
-                <MyButton variant="contained" c='#32D74B' disableElevation>GEEKS FOR GEEKS</MyButton>
-                <MyButton variant="contained" c='#FFD60A' disableElevation>LEETCODE</MyButton>
+                {/* <MyButton disableRipple variant="contained" c='#FF2D55' disableElevation>CODEFORCES</MyButton> */}
+                <MyButton disableRipple variant="contained" c='#32D74B' disableElevation>GEEKS FOR GEEKS</MyButton>
+                <MyButton disableRipple variant="contained" c='#FFD60A' disableElevation>LEETCODE</MyButton>
             </Stack>
         </div>
     )
 }
 
 export default function View() {
+    const text = `
+### Subheading One
+Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
+
+#
+#
+
+##### Subheading Two 
+Google’s Quantum AI [CommonMark](https://commonmark.org) has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
+
+#
+
+![alt text](https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/09/Impossible-Math_2880x1220_LHPA.jpg)
+
+1. Google’s Quantum AI team has had a productive 2021.
+2. Google’s Quantum AI team has had a productive 2021.Google’s Quantum AI team has had a productive 2021.
+3. Google’s Quantum AI team has had a.
+
+#
+#
+
+### Subheading One
+Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
+
+#
+#
+`;
     return (
         <div>
-            {ArticlePage()}
+            {ArticlePage(text)}
         </div>
     )
 }

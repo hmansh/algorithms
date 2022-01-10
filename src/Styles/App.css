@@ -35,3 +35,28 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(0, 0, 0); 
 }
+
+.article > * {
+  padding-top: 10px;
+}
+
+.article > ol {
+  padding-left: 20px;
+}
+
+.article > p {
+  margin: auto;
+}
+
+.article > p > a {
+  font-weight: 700;
+  text-decoration: none;
+  color: #3567d3;
+}
+
+.article > p > img {
+  max-width: 650px;
+  border-radius: 5px;
+  display: block;
+  margin: 1rem auto;
+}

@@ -105,6 +105,7 @@ export default function App() {
                     color="inherit"
                     onClick={handleDrawerOperation}
                     edge="state"
+                    disableRipple
                     sx={{ mr: 2, ...(drawerOpen && { display: "none"})}}
                   >
                     <MenuIcon />
@@ -134,14 +135,14 @@ export default function App() {
               </IconButton>
             </DrawerHeader>
             <Divider/>
-            <MyList>
+            <MyList  >
               {[
                 "Random Topic", "Random Topic",
                 "Random Topic", "Random Topic",
                 "Random Topic", "Random Topic",
                 "Random Topic", "Random Topic",
               ].map((text, index) => (
-                  <ListItem button key={text}>
+                  <ListItem disableRipple button key={text}>
                       <ListItemText primary={text + " " + index} />
                   </ListItem>
               ))}
