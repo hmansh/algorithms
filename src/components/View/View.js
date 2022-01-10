@@ -181,8 +181,19 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 #
 `;
     return (
-        <div>
-            {ArticlePage(text)}
+        <div className='grid-container'>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
+            <div className='grid-item'><ContentCard/></div>
         </div>
     )
 }

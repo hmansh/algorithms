@@ -17,11 +17,10 @@ export default function ContentCard(props) {
                 <CardMedia
                     component="img"
                     // alt="green iguana"
-                    height="40"
                     // image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpCZDBG_GkepLlVovwn816LyPKRR6NC5N2sg&usqp=CAU"
-                    sx={{background:color}}
+                    sx={{background:color, height: '30%'}}
                 />
-                <CardContent sx={{background: "#131313", color: color}}>
+                <CardContent sx={{background: "#131313", color: color, height: '70%'}}>
                     <Typography gutterBottom variant="h4" component="div">
                         Linked List
                     </Typography>
