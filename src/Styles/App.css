@@ -8,8 +8,8 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   background: #050505;
 }
@@ -25,15 +25,15 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(124, 123, 123, 0.205); 
+  background: rgba(124, 123, 123, 0.205);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(0, 0, 0); 
+  background: rgb(0, 0, 0);
 }
 
 .article > * {
@@ -62,8 +62,6 @@ body {
 }
 
 .grid-container {
-  /* border: 1px solid red; */
-  /* min-height: 100vh; temp to be removed */
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -83,6 +81,5 @@ body {
 }
 
 .grid-item {
-  /* background: #3567d3; */
   min-height: 27vh;
 }

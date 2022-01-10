@@ -23,13 +23,6 @@ import {MyList, AppBar, DrawerHeader, Main} from './components/CustomComponents/
 
 const drawerWidth = 350;
 
-
-
-
-
-
-
-
 export default function App() {
 
   const theme = useTheme();
