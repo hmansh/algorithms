@@ -6,6 +6,22 @@ import COLORS from '../../utils/Colors';
 
 const drawerWidth = 200;
 
+export const TopicList = styled(List)({
+    '& .MuiListItem-root': {
+        color: '#fff',
+        paddingLeft: 24,
+        paddingRight: 24,
+        width: '95%',
+        margin: 'auto',
+        borderRadius: 5,
+        '&:hover': {
+            background: 'white',
+            color: 'black'
+        }
+    },
+});
+
+
 export const MyList = styled(List)({
     '& .MuiListItem-root': {
         color: '#fff',

@@ -18,6 +18,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import "../styles/App.css";
+import { TopicList } from '../components/CustomComponents/CustomComponents';
 
 const breadcrumbs = [
     <Link underline="hover" key="1" color="inherit" href="/">
@@ -80,74 +81,110 @@ export default function Blog(props) {
 
     const drawer = (
         <div>
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MenuIcon />}
-                        </ListItemIcon>
+            <TopicList>
+                {[
+                    'Introduction to Linked List',
+                    'Linked List vs Array',
+                    'Linked List Insertion',
+                    'Linked List Deletion (Deleting a given key)',
+                    'Linked List Deletion (Deleting a key at given position)',
+                    'Write a function to delete a Linked List',
+                    'Find Length of a Linked List (Iterative and Recursive)',
+                    'Search an element in a Linked List (Iterative and Recursive)',
+                    'Write a function to get Nth node in a Linked List',
+                    'Nth node from the end of a Linked List',
+                    'Print the middle of a given linked list',
+                    'Write a function that counts the number of',
+                    'Detect loop in a linked list',
+                    'Find length of loop in linked list'
+                ].map((text, index) => (
+                    <ListItem disableRipple button key={text}>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}
-            </List>
+            </TopicList>
+        </div>
+    );
+
+    const blogContent = (
+        <div
+            style={{
+                maxWidth: '720px',
+                margin: '10px auto',
+                padding: '1rem'
+            }}
+            id="blog-content"
+        >
+            <Breadcrumbs
+                sx={{ color: 'white' }}
+                separator={<NavigateNextIcon fontSize="small" />}
+            >
+                {breadcrumbs}
+            </Breadcrumbs>
+            <Typography variant='h4'
+                sx={{ paddingTop: '10px' }}
+            >Merge Two Linked Lists</Typography>
+            <div
+                style={{
+                    maxWidth: '200px',
+                    display: "flex",
+                    justifyContent: "space-between",
+                    // border: "1px solid red",
+                    paddingTop: '10px',
+                }}
+            >
+                <Link sx={{ margin: 'auto 0', color: 'white' }}
+                    underline='none'
+                >
+                    6 Min read
+                </Link>
+                <IconButton
+                    color="inherit"
+                    edge="state"
+                    disableRipple
+                >
+                    <ShareIcon sx={{ paddingRight: 1 }} />
+                    <Typography> Share</Typography>
+                </IconButton>
+            </div>
+            <div className='article' style={{ padding: '10px' }}>
+                <ReactMarkdown>{text}</ReactMarkdown>
+            </div>
+        </div>
+    );
+
+    const contentList = (
+        <div
+            style={{
+                width: '500px',
+                maxWidth: '100%',
+                margin: '0 auto',
+            }}
+            id="content-drawer"
+        >
+            {drawer}
         </div>
     );
 
     return (
-        <div style={{ display: 'flex'}} >
-            <div style={{ width: '350px'}} id="blog-drawer">{drawer}</div>
-            {true ? <div
-                style={{
-                    maxWidth: '720px',
-                    margin: '10px auto',
-                }}
-            >
-                <Breadcrumbs
-                    sx={{ color: 'white' }}
-                    separator={<NavigateNextIcon fontSize="small" />}
-                >
-                    {breadcrumbs}
-                </Breadcrumbs>
-                <Typography variant='h4'
-                    sx={{ paddingTop: '10px' }}
-                >Merge Two Linked Lists</Typography>
-                <div
-                    style={{
-                        maxWidth: '200px',
-                        display: "flex",
-                        justifyContent: "space-between",
-                        // border: "1px solid red",
-                        paddingTop: '10px',
-                    }}
-                >
-                    <Link sx={{ margin: 'auto 0', color: 'white' }}
-                        underline='none'
-                    >
-                        6 Min read
-                    </Link>
-                    <IconButton
-                        color="inherit"
-                        edge="state"
-                        disableRipple
-                    >
-                        <ShareIcon sx={{ paddingRight: 1 }} />
-                        <Typography> Share</Typography>
-                    </IconButton>
-                </div>
-                <div className='article' style={{ padding: '10px' }}>
-                    <ReactMarkdown>{text}</ReactMarkdown>
-                </div>
-                {/* <Stack spacing={1} direction="row">
-                    <MyButton disableRipple variant="contained" c='#FF2D55' disableElevation>CODEFORCES</MyButton>
-                    <MyButton disableRipple variant="contained" c='#32D74B' disableElevation>GEEKS FOR GEEKS</MyButton>
-                    <MyButton disableRipple variant="contained" c='#FFD60A' disableElevation>LEETCODE</MyButton>
-                </Stack> */}
-            </div> : <img src={spinner} alt="" style={{
-                height: '4rem',
-                width: '4rem',
-                margin: '35vh auto',
-                display: 'block'
-            }} />}
+        <div style={{ display: 'flex' }} >
+            <div style={{ width: '350px' }} id="blog-drawer">{drawer}</div>
+            {true ? 
+                blogContent
+             : <img src={spinner} alt="" style={{
+                    height: '4rem',
+                    width: '4rem',
+                    margin: '35vh auto',
+                    display: 'block'
+                }} />}
+            {true ? 
+                contentList
+             : <img src={spinner} alt="" style={{
+                    height: '4rem',
+                    width: '4rem',
+                    margin: '35vh auto',
+                    display: 'block'
+                }} />}
         </div>
     )
 }

@@ -99,11 +99,21 @@ body {
 }
 
 #blog-drawer {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  background: #161616;
+}
+
+@media ( min-width: 1000px) {
+  #content-drawer {
+    display: none;
+  }
 }
 
 @media (max-width: 1000px) {
   #blog-drawer {
+    display: none;
+  }
+  #blog-content { 
     display: none;
   }
 }
