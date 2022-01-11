@@ -6,7 +6,7 @@ import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 export default function Grid(props) {
     const { cardList } = props;
     return (
-        <>
+        <div id="content-container">
             {cardList.length ? <div className='grid-container'>
                 {cardList.map(item => (
                     <div className='grid-item'>
@@ -28,6 +28,6 @@ export default function Grid(props) {
                 </div>
             </div>
             }
-        </>
+        </div>
     )
 }

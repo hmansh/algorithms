@@ -6,13 +6,14 @@ import {
     Route,
     Routes,
 } from "react-router-dom";
+import "../../styles/App.css";
 
 export default function View(props) {
     
     const { cardList, setCurrentTopic } = props; 
 
     return (
-        <div>
+        <div id="view-container">
             <Routes>
                 <Route path="/home" element={<Dashboard setTopic={setCurrentTopic}/>} />
                 <Route path="/topics" element={<Grid cardList={cardList}/>} />

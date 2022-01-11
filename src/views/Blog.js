@@ -10,6 +10,14 @@ import ReactMarkdown from 'react-markdown';
 import "../styles/App.css";
 import { MyButton } from '../components/CustomComponents/CustomComponents';
 import spinner from "../utils/spinner.svg";
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import "../styles/App.css";
 
 const breadcrumbs = [
     <Link underline="hover" key="1" color="inherit" href="/">
@@ -52,17 +60,46 @@ Google’s Quantum AI [CommonMark](https://commonmark.org) has had a productive 
 ### Subheading One
 Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
 
+### Subheading One
+Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
+
+### Subheading One
+Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
+
+![alt text](https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/09/Impossible-Math_2880x1220_LHPA.jpg)
+
+### Subheading One
+Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
+
+
 #
 #
 `;
 
 export default function Blog(props) {
-    return (
+
+    const drawer = (
         <div>
-            { false ? <div
+            <List>
+                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                    <ListItem button key={text}>
+                        <ListItemIcon>
+                            {index % 2 === 0 ? <InboxIcon /> : <MenuIcon />}
+                        </ListItemIcon>
+                        <ListItemText primary={text} />
+                    </ListItem>
+                ))}
+            </List>
+        </div>
+    );
+
+    return (
+        <div style={{ display: 'flex'}} >
+            <div style={{ width: '350px'}} id="blog-drawer">{drawer}</div>
+            {true ? <div
                 style={{
                     maxWidth: '720px',
-                    margin: 'auto'
+                    margin: '10px auto',
                 }}
             >
                 <Breadcrumbs
@@ -100,17 +137,17 @@ export default function Blog(props) {
                 <div className='article' style={{ padding: '10px' }}>
                     <ReactMarkdown>{text}</ReactMarkdown>
                 </div>
-                <Stack spacing={1} direction="row">
-                    {/* <MyButton disableRipple variant="contained" c='#FF2D55' disableElevation>CODEFORCES</MyButton> */}
+                {/* <Stack spacing={1} direction="row">
+                    <MyButton disableRipple variant="contained" c='#FF2D55' disableElevation>CODEFORCES</MyButton>
                     <MyButton disableRipple variant="contained" c='#32D74B' disableElevation>GEEKS FOR GEEKS</MyButton>
                     <MyButton disableRipple variant="contained" c='#FFD60A' disableElevation>LEETCODE</MyButton>
-                </Stack>
+                </Stack> */}
             </div> : <img src={spinner} alt="" style={{
                 height: '4rem',
                 width: '4rem',
                 margin: '35vh auto',
                 display: 'block'
-            }}/>}
+            }} />}
         </div>
     )
 }

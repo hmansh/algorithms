@@ -17,7 +17,7 @@ export default function Dashboard(props) {
     }
 
     return (
-        <div>
+        <div id="content-container">
             <Grid container rowSpacing={2} columnSpacing={2} columns={{ xs: 1, sm: 2 }} gutterBottom>
                 {dashboardCardsData.map(item => (
                     <Grid item xs={1} sm={1} sx={{ height: '27vh' }}>

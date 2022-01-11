@@ -36,6 +36,10 @@ body {
   background: rgb(0, 0, 0);
 }
 
+.article {
+  font-size: 1rem;
+}
+
 .article > * {
   padding-top: 10px;
 }
@@ -88,4 +92,18 @@ body {
 
 .grid-item {
   min-height: 27vh;
+}
+
+#content-container {
+  margin: 10px;
+}
+
+#blog-drawer {
+  border: 1px solid red;
+}
+
+@media (max-width: 1000px) {
+  #blog-drawer {
+    display: none;
+  }
 }

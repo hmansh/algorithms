@@ -4,7 +4,7 @@ import List from "@mui/material/List";
 import Button from '@mui/material/Button';
 import COLORS from '../../utils/Colors';
 
-const drawerWidth = 350;
+const drawerWidth = 200;
 
 export const MyList = styled(List)({
     '& .MuiListItem-root': {
@@ -58,7 +58,7 @@ export const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open
         minHeight: '100vh',
         background: COLORS.body,
         color: 'white',
-        padding: theme.spacing(2),
+        padding: theme.spacing(0),
         transition: theme.transitions.create("margin", {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen

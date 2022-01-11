@@ -16,7 +16,7 @@ import { MyList, AppBar, DrawerHeader, Main } from './components/CustomComponent
 import { BrowserRouter, Link } from 'react-router-dom';
 import { algorithmsTopics, dataStructureTopics} from './utils/staticData';
 
-const drawerWidth = 350;
+const drawerWidth = 200;
 
 export default function App() {
 
