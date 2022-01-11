@@ -13,7 +13,7 @@ import ListItemText from "@mui/material/ListItemText";
 import COLORS from './utils/Colors';
 import View from "./components/View/View";
 import { MyList, AppBar, DrawerHeader, Main } from './components/CustomComponents/CustomComponents';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 const drawerWidth = 350;
 
@@ -23,32 +23,35 @@ export default function App() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const handleDrawerOperation = () => {
-    setDrawerOpen( prev => !prev);
+    setDrawerOpen(prev => !prev);
   }
 
   return (
-    <div className="App">
+    <BrowserRouter>
+      <div className="App">
         <Box sx={{ display: "flex" }}>
           <AppBar position="fixed" open={drawerOpen} sx={{
             // background: COLORS.header 
-              boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px",
-              background: "rgba(23,23,23,0.92)",
-              backdropFilter: "saturate(180%) blur(20px)",
-            }}>
-              <Toolbar>
-                  <IconButton
-                    color="inherit"
-                    onClick={handleDrawerOperation}
-                    edge="state"
-                    disableRipple
-                    sx={{ mr: 2, ...(drawerOpen && { display: "none"})}}
-                  >
-                    <MenuIcon />
-                  </IconButton>
-                  <Typography variant="h6" noWrap component="div" >
-                    binarySearchTrees.com
-                  </Typography>
-              </Toolbar>
+            boxShadow: "rgba(0, 0, 0, 0.12) 0px 1px 3px",
+            background: "rgba(23,23,23,0.92)",
+            backdropFilter: "saturate(180%) blur(20px)",
+          }}>
+            <Toolbar>
+              <IconButton
+                color="inherit"
+                onClick={handleDrawerOperation}
+                edge="state"
+                disableRipple
+                sx={{ mr: 2, ...(drawerOpen && { display: "none" }) }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Link to="/home" style={{ textDecoration: 'none' }}>
+                <Typography variant="h6" noWrap component="div" style={{color: 'white'}} >
+                  binarySearchTrees.com
+                </Typography>
+              </Link>
+            </Toolbar>
           </AppBar>
           <Drawer
             sx={{
@@ -69,7 +72,7 @@ export default function App() {
                 <MenuIcon />
               </IconButton>
             </DrawerHeader>
-            <Divider/>
+            <Divider />
             <MyList  >
               {[
                 "Random Topic", "Random Topic",
@@ -77,9 +80,9 @@ export default function App() {
                 "Random Topic", "Random Topic",
                 "Random Topic", "Random Topic",
               ].map((text, index) => (
-                  <ListItem disableRipple button key={text}>
-                      <ListItemText primary={text + " " + index} />
-                  </ListItem>
+                <ListItem disableRipple button key={text}>
+                  <ListItemText primary={text + " " + index} />
+                </ListItem>
               ))}
             </MyList>
           </Drawer>
@@ -87,14 +90,13 @@ export default function App() {
             backgroundImage: "radial-gradient(#323232 1px, transparent 0)",
             backgroundSize: "25px 25px",
           }}>
-              <DrawerHeader/>
-              <div className='view'>
-                <BrowserRouter>
-                  <View/>
-                </BrowserRouter>
-              </div>
+            <DrawerHeader />
+            <div className='view'>
+              <View />
+            </div>
           </Main>
         </Box>
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }

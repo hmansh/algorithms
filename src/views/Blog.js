@@ -9,6 +9,7 @@ import Stack from '@mui/material/Stack';
 import ReactMarkdown from 'react-markdown';
 import "../styles/App.css";
 import { MyButton } from '../components/CustomComponents/CustomComponents';
+import spinner from "../utils/spinner.svg";
 
 const breadcrumbs = [
     <Link underline="hover" key="1" color="inherit" href="/">
@@ -58,7 +59,7 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 export default function Blog(props) {
     return (
         <div>
-            <div
+            { false ? <div
                 style={{
                     maxWidth: '720px',
                     margin: 'auto'
@@ -104,7 +105,12 @@ export default function Blog(props) {
                     <MyButton disableRipple variant="contained" c='#32D74B' disableElevation>GEEKS FOR GEEKS</MyButton>
                     <MyButton disableRipple variant="contained" c='#FFD60A' disableElevation>LEETCODE</MyButton>
                 </Stack>
-            </div>
+            </div> : <img src={spinner} alt="" style={{
+                height: '4rem',
+                width: '4rem',
+                margin: '35vh auto',
+                display: 'block'
+            }}/>}
         </div>
     )
 }
