@@ -14,6 +14,7 @@ import COLORS from './utils/Colors';
 import View from "./components/View/View";
 import { MyList, AppBar, DrawerHeader, Main } from './components/CustomComponents/CustomComponents';
 import { BrowserRouter, Link } from 'react-router-dom';
+import { algorithmsTopics, dataStructureTopics} from './utils/staticData';
 
 const drawerWidth = 350;
 
@@ -21,9 +22,33 @@ export default function App() {
 
   // const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [currentTopic, setCurrentTopic] = React.useState('data-structures');
 
   const handleDrawerOperation = () => {
     setDrawerOpen(prev => !prev);
+  }
+
+  const handleCurrentTopic = (topic) => {
+    setCurrentTopic(topic);
+  }
+
+  const drawerData = { 
+    'data-structures': {
+      name: 'Data Structures',
+      data: dataStructureTopics,
+    },
+    'algorithms': {
+      name: 'Algorithms',
+      data: algorithmsTopics
+    },
+    'codeforces': {
+      name: 'Codeforces',
+      data: []
+    },
+    'questions': {
+      name: 'Questions',
+      data: []
+    }
   }
 
   return (
@@ -47,7 +72,7 @@ export default function App() {
                 <MenuIcon />
               </IconButton>
               <Link to="/home" style={{ textDecoration: 'none' }}>
-                <Typography variant="h6" noWrap component="div" style={{color: 'white'}} >
+                <Typography variant="h6" noWrap component="div" style={{ color: 'white' }} >
                   binarySearchTrees.com
                 </Typography>
               </Link>
@@ -74,15 +99,12 @@ export default function App() {
             </DrawerHeader>
             <Divider />
             <MyList  >
-              {[
-                "Random Topic", "Random Topic",
-                "Random Topic", "Random Topic",
-                "Random Topic", "Random Topic",
-                "Random Topic", "Random Topic",
-              ].map((text, index) => (
-                <ListItem disableRipple button key={text}>
-                  <ListItemText primary={text + " " + index} />
-                </ListItem>
+              { Object.keys(drawerData).map((key, index) => (
+                <Link to='/topics' style={{textDecoration: 'none'}} onClick={() => handleCurrentTopic(key)}>
+                  <ListItem disableRipple button key={key}>
+                    <ListItemText primary={drawerData[key].name} />
+                  </ListItem>
+                </Link>
               ))}
             </MyList>
           </Drawer>
@@ -92,7 +114,10 @@ export default function App() {
           }}>
             <DrawerHeader />
             <div className='view'>
-              <View />
+              <View
+                cardList={drawerData[currentTopic].data}
+                setCurrentTopic={setCurrentTopic}
+              />
             </div>
           </Main>
         </Box>

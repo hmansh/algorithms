@@ -6,22 +6,16 @@ import {
     Route,
     Routes,
 } from "react-router-dom";
-import { dataStructureTopics, algorithmsTopics } from "../../utils/staticData";
 
-const topic = {
-    'data-structures': dataStructureTopics,
-    'algorithms': algorithmsTopics,
-}
-
-export default function View() {
+export default function View(props) {
     
-    const [currentTopic, setCurrentTopic] = useState('data-structures');
+    const { cardList, setCurrentTopic } = props; 
 
     return (
         <div>
             <Routes>
                 <Route path="/home" element={<Dashboard setTopic={setCurrentTopic}/>} />
-                <Route path="/topics" element={<Grid cardList={topic[currentTopic] ? topic[currentTopic] : []}/>} />
+                <Route path="/topics" element={<Grid cardList={cardList}/>} />
                 <Route path="/blog" element={<Blog/>} />
             </Routes>
         </div>

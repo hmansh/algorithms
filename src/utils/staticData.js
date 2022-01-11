@@ -3,7 +3,7 @@ import COLORS from './Colors';
 export const dashboardCardsData = [
     {
         title: 'Data Structures',
-        slug: 'data-structures'
+        slug: 'data-structures',
     },
     {
         title: 'Algorithms',
