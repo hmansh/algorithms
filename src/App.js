@@ -19,7 +19,7 @@ const drawerWidth = 350;
 
 export default function App() {
 
-  const theme = useTheme();
+  // const theme = useTheme();
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const handleDrawerOperation = () => {

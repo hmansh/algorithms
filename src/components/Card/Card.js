@@ -17,7 +17,7 @@ export default function ContentCard(props) {
                     sx={{background: color || '#fff', height: '30%'}}
                 />
                 <CardContent sx={{background: "#131313", color: color || '#fff', height: '70%'}}>
-                    <Typography gutterBottom variant="h4" component="div">
+                    <Typography gutterBottom variant="h5" component="div">
                         {topic}
                     </Typography>
                     <div style={{ maxHeight: '55%'}}>

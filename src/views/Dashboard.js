@@ -10,16 +10,21 @@ import ContentCard from '../components/Card/Card.js';
 import { Link } from "react-router-dom";
 
 export default function Dashboard(props) {
+    
+    const handleClick = (topic) => {
+        console.log(topic);
+        props.setTopic(topic);
+    }
+
     return (
         <div>
             <Grid container rowSpacing={2} columnSpacing={2} columns={{ xs: 1, sm: 2 }} gutterBottom>
                 {dashboardCardsData.map(item => (
                     <Grid item xs={1} sm={1} sx={{ height: '27vh' }}>
-                        <Link to='/topics' style={{textDecoration: 'none'}} key={item.slug}>
+                        <Link to='/topics' style={{textDecoration: 'none'}} key={item.slug} onClick={() => handleClick(item.slug)}>
                             <DashboardCard
                                 title={item.title}
                                 slug={item.slug}
-                                onClick={() => console.log(item)}
                                 key={item.slug}
                             />
                         </Link>

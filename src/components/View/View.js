@@ -17,16 +17,11 @@ export default function View() {
     
     const [currentTopic, setCurrentTopic] = useState('data-structures');
 
-    const handleTopicChange = (topic) => {
-        console.log(topic);
-        setCurrentTopic(topic);
-    };
-
     return (
         <div>
             <Routes>
-                <Route path="/home" element={<Dashboard handleClick={handleTopicChange}/>} />
-                <Route path="/topics" element={<Grid cardList={topic[currentTopic]}/>} />
+                <Route path="/home" element={<Dashboard setTopic={setCurrentTopic}/>} />
+                <Route path="/topics" element={<Grid cardList={topic[currentTopic] ? topic[currentTopic] : []}/>} />
                 <Route path="/blog" element={<Blog/>} />
             </Routes>
         </div>
