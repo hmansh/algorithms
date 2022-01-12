@@ -10,14 +10,14 @@ import "../../styles/App.css";
 
 export default function View(props) {
     
-    const { cardList, setCurrentTopic } = props; 
+    const { cardList, setCurrentTopic, setDrawerItems } = props; 
 
     return (
         <div id="view-container">
             <Routes>
-                <Route path="/home" element={<Dashboard setTopic={setCurrentTopic}/>} />
-                <Route path="/topics" element={<Grid cardList={cardList}/>} />
-                <Route path="/blog" element={<Blog/>} />
+                <Route path="/home" element={<Dashboard setDrawerItems={setDrawerItems} setTopic={setCurrentTopic}/>} />
+                <Route path="/topics" element={<Grid setDrawerItems={setDrawerItems} cardList={cardList}/>} />
+                <Route path="/blog" element={<Blog setDrawerItems={setDrawerItems} />} />
             </Routes>
         </div>
     )

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { dashboardCardsData, dataStructureTopics } from '../utils/staticData';
 import Toolbar from "@mui/material/Toolbar";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -10,18 +10,29 @@ import ContentCard from '../components/Card/Card.js';
 import { Link } from "react-router-dom";
 
 export default function Dashboard(props) {
-    
+
     const handleClick = (topic) => {
         console.log(topic);
         props.setTopic(topic);
     }
+
+    const { setDrawerItems } = props;
+
+    useEffect(() => {
+        setDrawerItems({
+            'Data Structures': 'data-structures',
+            'Algorithms': 'algorithms',
+            'Codeforce': 'codeforces',
+            'Questions': 'questions'
+        });
+    }, [])
 
     return (
         <div id="content-container">
             <Grid container rowSpacing={2} columnSpacing={2} columns={{ xs: 1, sm: 2 }} gutterBottom>
                 {dashboardCardsData.map(item => (
                     <Grid item xs={1} sm={1} sx={{ height: '27vh' }}>
-                        <Link to='/topics' style={{textDecoration: 'none'}} key={item.slug} onClick={() => handleClick(item.slug)}>
+                        <Link to='/topics' style={{ textDecoration: 'none' }} key={item.slug} onClick={() => handleClick(item.slug)}>
                             <DashboardCard
                                 title={item.title}
                                 slug={item.slug}
@@ -45,7 +56,7 @@ export default function Dashboard(props) {
                             slug={item.slug}
                             desc={item.desc}
                             api={item.api}
-                            color={item.color}        
+                            color={item.color}
                         />
                     </Grid>
                 ))}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Typography from "@mui/material/Typography";
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
@@ -79,32 +79,19 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 
 export default function Blog(props) {
 
-    const drawer = (
-        <div>
-            <TopicList>
-                {[
-                    'Introduction to Linked List',
-                    'Linked List vs Array',
-                    'Linked List Insertion',
-                    'Linked List Deletion (Deleting a given key)',
-                    'Linked List Deletion (Deleting a key at given position)',
-                    'Write a function to delete a Linked List',
-                    'Find Length of a Linked List (Iterative and Recursive)',
-                    'Search an element in a Linked List (Iterative and Recursive)',
-                    'Write a function to get Nth node in a Linked List',
-                    'Nth node from the end of a Linked List',
-                    'Print the middle of a given linked list',
-                    'Write a function that counts the number of',
-                    'Detect loop in a linked list',
-                    'Find length of loop in linked list'
-                ].map((text, index) => (
-                    <ListItem disableRipple button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </TopicList>
-        </div>
-    );
+    const { setDrawerItems } = props;
+
+    useEffect(() => {
+        setDrawerItems({
+            'Introduction to Linked List' : "find-length-of-a-linked-list",
+            'Linked List vs Array': 'Find Length of a Linked List',
+            'Linked List Insertion': 'Find Length of a Linked List',
+            'Linked List Deletion Deleting a given key': 'Find Length of a Linked List',
+            'Linked List Deletion Deleting a key at given position': 'Find Length of a Linked List',
+            'Write a function to delete a Linked List': 'Find Length of a Linked List',
+            'Find Length of a Linked List': 'Find Length of a Linked List'
+        })
+    }, []);
 
     const blogContent = (
         <div
@@ -153,32 +140,10 @@ export default function Blog(props) {
         </div>
     );
 
-    const contentList = (
-        <div
-            style={{
-                width: '500px',
-                maxWidth: '100%',
-                margin: '0 auto',
-            }}
-            id="content-drawer"
-        >
-            {drawer}
-        </div>
-    );
-
     return (
         <div style={{ display: 'flex' }} >
-            <div style={{ width: '350px' }} id="blog-drawer">{drawer}</div>
             {true ? 
                 blogContent
-             : <img src={spinner} alt="" style={{
-                    height: '4rem',
-                    width: '4rem',
-                    margin: '35vh auto',
-                    display: 'block'
-                }} />}
-            {true ? 
-                contentList
              : <img src={spinner} alt="" style={{
                     height: '4rem',
                     width: '4rem',

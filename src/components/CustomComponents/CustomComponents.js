@@ -4,7 +4,7 @@ import List from "@mui/material/List";
 import Button from '@mui/material/Button';
 import COLORS from '../../utils/Colors';
 
-const drawerWidth = 200;
+const drawerWidth = 350;
 
 export const TopicList = styled(List)({
     '& .MuiListItem-root': {
@@ -20,7 +20,6 @@ export const TopicList = styled(List)({
         }
     },
 });
-
 
 export const MyList = styled(List)({
     '& .MuiListItem-root': {

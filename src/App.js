@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./styles/App.css";
-import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,7 +15,7 @@ import { MyList, AppBar, DrawerHeader, Main } from './components/CustomComponent
 import { BrowserRouter, Link } from 'react-router-dom';
 import { algorithmsTopics, dataStructureTopics} from './utils/staticData';
 
-const drawerWidth = 200;
+const drawerWidth = 350;
 
 export default function App() {
 
@@ -31,6 +30,17 @@ export default function App() {
   const handleCurrentTopic = (topic) => {
     setCurrentTopic(topic);
   }
+
+  const [drawerItems, setDrawerItems] = useState({});
+
+  useEffect(() => {
+    setDrawerItems({
+      'Data Structures' : 'data-structures',
+      'Algorithms' : 'algorithms',
+      'Codeforce':'codeforces',
+      'Questions': 'questions'
+    });
+  }, []);
 
   const drawerData = { 
     'data-structures': {
@@ -99,10 +109,10 @@ export default function App() {
             </DrawerHeader>
             <Divider />
             <MyList  >
-              { Object.keys(drawerData).map((key, index) => (
-                <Link to='/topics' style={{textDecoration: 'none'}} onClick={() => handleCurrentTopic(key)}>
+              { Object.keys(drawerItems).map((key, index) => (
+                <Link to='/topics' style={{textDecoration: 'none'}} onClick={() => handleCurrentTopic(drawerItems[key])}>
                   <ListItem disableRipple button key={key}>
-                    <ListItemText primary={drawerData[key].name} />
+                    <ListItemText primary={key} />
                   </ListItem>
                 </Link>
               ))}
@@ -116,6 +126,7 @@ export default function App() {
             <div className='view'>
               <View
                 cardList={drawerData[currentTopic].data}
+                setDrawerItems={setDrawerItems}
                 setCurrentTopic={setCurrentTopic}
               />
             </div>

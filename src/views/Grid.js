@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ContentCard from '../components/Card/Card';
 import { Link } from "react-router-dom";
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 
 export default function Grid(props) {
-    const { cardList } = props;
+    const { cardList, setDrawerItems } = props;
+
+    useEffect(() => {
+        setDrawerItems({
+            'Data Structures': 'data-structures',
+            'Algorithms': 'algorithms',
+            'Codeforce': 'codeforces',
+            'Questions': 'questions'
+        });
+    }, []);
+
     return (
         <div id="content-container">
             {cardList.length ? <div className='grid-container'>
