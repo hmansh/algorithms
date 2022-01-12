@@ -1,40 +1,32 @@
-import React, { useEffect } from 'react';
-import Typography from "@mui/material/Typography";
+/* eslint-disable max-len */
+import React, {useEffect} from 'react';
+import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import IconButton from "@mui/material/IconButton";
+import IconButton from '@mui/material/IconButton';
 import ShareIcon from '@mui/icons-material/Share';
-import Stack from '@mui/material/Stack';
 import ReactMarkdown from 'react-markdown';
-import "../styles/App.css";
-import { MyButton } from '../components/CustomComponents/CustomComponents';
-import spinner from "../utils/spinner.svg";
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import "../styles/App.css";
-import { TopicList } from '../components/CustomComponents/CustomComponents';
+import '../styles/App.css';
+import spinner from '../utils/spinner.svg';
+import '../styles/App.css';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const breadcrumbs = [
-    <Link underline="hover" key="1" color="inherit" href="/">
+  <Link underline="hover" key="1" color="inherit" href="/">
         Data Structures
-    </Link>,
-    <Link
-        underline="none"
-        key="2"
-        color="inherit"
-        href="linked-list"
-    >
+  </Link>,
+  <Link
+    underline="none"
+    key="2"
+    color="inherit"
+    href="linked-list"
+  >
         Linked Lists
-    </Link>,
-    <Typography key="3">
+  </Link>,
+  <Typography key="3">
         Merge Two Linked Lists
-    </Typography>,
+  </Typography>,
 ];
 
 const text = `
@@ -78,78 +70,95 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 `;
 
 export default function Blog(props) {
+  const {setDrawerItems} = props;
 
-    const { setDrawerItems } = props;
+  useEffect(() => {
+    setDrawerItems({
+      'Introduction to Linked List': 'find-length-of-a-linked-list',
+      'Linked List vs Array': 'Find Length of a Linked List',
+      'Linked List Insertion': 'Find Length of a Linked List',
+      'Linked List Deletion Deleting a given key': 'Find Length of a Linked List',
+      'Linked List Deletion Deleting a key at given position': 'Find Length of a Linked List',
+      'Write a function to delete a Linked List': 'Find Length of a Linked List',
+      'Find Length of a Linked List': 'Find Length of a Linked List',
+    });
+  }, []);
 
-    useEffect(() => {
-        setDrawerItems({
-            'Introduction to Linked List' : "find-length-of-a-linked-list",
-            'Linked List vs Array': 'Find Length of a Linked List',
-            'Linked List Insertion': 'Find Length of a Linked List',
-            'Linked List Deletion Deleting a given key': 'Find Length of a Linked List',
-            'Linked List Deletion Deleting a key at given position': 'Find Length of a Linked List',
-            'Write a function to delete a Linked List': 'Find Length of a Linked List',
-            'Find Length of a Linked List': 'Find Length of a Linked List'
-        })
-    }, []);
-
-    const blogContent = (
-        <div
-            style={{
-                maxWidth: '720px',
-                margin: '10px auto',
-                padding: '1rem'
-            }}
-            id="blog-content"
+  const blogContent = (
+    <div
+      style={{
+        maxWidth: '720px',
+        margin: '10px auto',
+        padding: '1rem',
+      }}
+      id="blog-content"
+    >
+      <Breadcrumbs
+        sx={{color: 'white'}}
+        separator={<NavigateNextIcon fontSize="small" />}
+      >
+        {breadcrumbs}
+      </Breadcrumbs>
+      <Typography variant='h4'
+        sx={{paddingTop: '10px'}}
+      >Merge Two Linked Lists</Typography>
+      <div
+        style={{
+          maxWidth: '200px',
+          display: 'flex',
+          justifyContent: 'space-between',
+          // border: "1px solid red",
+          paddingTop: '10px',
+        }}
+      >
+        <Link sx={{margin: 'auto 0', color: 'white'}}
+          underline='none'
         >
-            <Breadcrumbs
-                sx={{ color: 'white' }}
-                separator={<NavigateNextIcon fontSize="small" />}
-            >
-                {breadcrumbs}
-            </Breadcrumbs>
-            <Typography variant='h4'
-                sx={{ paddingTop: '10px' }}
-            >Merge Two Linked Lists</Typography>
-            <div
-                style={{
-                    maxWidth: '200px',
-                    display: "flex",
-                    justifyContent: "space-between",
-                    // border: "1px solid red",
-                    paddingTop: '10px',
-                }}
-            >
-                <Link sx={{ margin: 'auto 0', color: 'white' }}
-                    underline='none'
-                >
                     6 Min read
-                </Link>
-                <IconButton
-                    color="inherit"
-                    edge="state"
-                    disableRipple
-                >
-                    <ShareIcon sx={{ paddingRight: 1 }} />
-                    <Typography> Share</Typography>
-                </IconButton>
-            </div>
-            <div className='article' style={{ padding: '10px' }}>
-                <ReactMarkdown>{text}</ReactMarkdown>
-            </div>
-        </div>
-    );
+        </Link>
+        <IconButton
+          color="inherit"
+          edge="state"
+          disableRipple
+        >
+          <ShareIcon sx={{paddingRight: 1}} />
+          <Typography> Share</Typography>
+        </IconButton>
+      </div>
+      <div className='article' style={{padding: '10px'}}>
+        <ReactMarkdown>{text}</ReactMarkdown>
+      </div>
+    </div>
+  );
 
-    return (
-        <div style={{ display: 'flex' }} >
-            {true ? 
-                blogContent
-             : <img src={spinner} alt="" style={{
-                    height: '4rem',
-                    width: '4rem',
-                    margin: '35vh auto',
-                    display: 'block'
-                }} />}
-        </div>
-    )
+  const loading = (
+    <img src={spinner} alt="" style={{
+      height: '3rem',
+      width: '3rem',
+      margin: '35vh auto',
+      display: 'block',
+    }} />
+  );
+
+  // eslint-disable-next-line no-unused-vars
+  const error = (
+    <div style={{margin: '35vh auto', display: 'block'}}>
+      <ErrorOutlineIcon alt="" style={{
+        height: '2rem',
+        width: '2rem',
+        margin: '0 auto 0.5rem auto',
+        display: 'block',
+      }} />
+      <div style={{color: 'white', fontWeight: '600', cursor: 'pointer',
+      }}>Reload</div>
+    </div>
+  );
+
+  return (
+    <div style={{display: 'flex'}} >
+      {false ?
+                blogContent :
+             loading }
+    </div>
+  );
 }
