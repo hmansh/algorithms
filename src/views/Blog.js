@@ -11,22 +11,16 @@ import '../styles/App.css';
 import spinner from '../utils/spinner.svg';
 import '../styles/App.css';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import axios from 'axios';
 
 const breadcrumbs = [
   <Link underline="hover" key="1" color="inherit" href="/">
-        Data Structures
+    Data Structures
   </Link>,
-  <Link
-    underline="none"
-    key="2"
-    color="inherit"
-    href="linked-list"
-  >
-        Linked Lists
+  <Link underline="none" key="2" color="inherit" href="linked-list">
+    Linked Lists
   </Link>,
-  <Typography key="3">
-        Merge Two Linked Lists
-  </Typography>,
+  <Typography key="3">Merge Two Linked Lists</Typography>,
 ];
 
 const text = `
@@ -70,18 +64,22 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 `;
 
 export default function Blog(props) {
-  const {setDrawerItems} = props;
+  const {setDrawerItems, currentSubTopic} = props;
 
   useEffect(() => {
-    setDrawerItems({
-      'Introduction to Linked List': 'find-length-of-a-linked-list',
-      'Linked List vs Array': 'Find Length of a Linked List',
-      'Linked List Insertion': 'Find Length of a Linked List',
-      'Linked List Deletion Deleting a given key': 'Find Length of a Linked List',
-      'Linked List Deletion Deleting a key at given position': 'Find Length of a Linked List',
-      'Write a function to delete a Linked List': 'Find Length of a Linked List',
-      'Find Length of a Linked List': 'Find Length of a Linked List',
-    });
+    axios
+        .get('http://localhost:8081/getAll.do')
+        .then((response) => {
+          const res = {
+            ...response.data.filter((item) => {
+              return item['subTopic'] === currentSubTopic;
+            }),
+          }[0]['data'];
+          setDrawerItems(res);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
   }, []);
 
   const blogContent = (
@@ -99,9 +97,9 @@ export default function Blog(props) {
       >
         {breadcrumbs}
       </Breadcrumbs>
-      <Typography variant='h4'
-        sx={{paddingTop: '10px'}}
-      >Merge Two Linked Lists</Typography>
+      <Typography variant="h4" sx={{paddingTop: '10px'}}>
+        Merge Two Linked Lists
+      </Typography>
       <div
         style={{
           maxWidth: '200px',
@@ -111,54 +109,50 @@ export default function Blog(props) {
           paddingTop: '10px',
         }}
       >
-        <Link sx={{margin: 'auto 0', color: 'white'}}
-          underline='none'
-        >
-                    6 Min read
+        <Link sx={{margin: 'auto 0', color: 'white'}} underline="none">
+          6 Min read
         </Link>
-        <IconButton
-          color="inherit"
-          edge="state"
-          disableRipple
-        >
+        <IconButton color="inherit" edge="state" disableRipple>
           <ShareIcon sx={{paddingRight: 1}} />
           <Typography> Share</Typography>
         </IconButton>
       </div>
-      <div className='article' style={{padding: '10px'}}>
+      <div className="article" style={{padding: '10px'}}>
         <ReactMarkdown>{text}</ReactMarkdown>
       </div>
     </div>
   );
 
   const loading = (
-    <img src={spinner} alt="" style={{
-      height: '3rem',
-      width: '3rem',
-      margin: '35vh auto',
-      display: 'block',
-    }} />
+    <img
+      src={spinner}
+      alt=""
+      style={{
+        height: '3rem',
+        width: '3rem',
+        margin: '35vh auto',
+        display: 'block',
+      }}
+    />
   );
 
   // eslint-disable-next-line no-unused-vars
   const error = (
     <div style={{margin: '35vh auto', display: 'block'}}>
-      <ErrorOutlineIcon alt="" style={{
-        height: '2rem',
-        width: '2rem',
-        margin: '0 auto 0.5rem auto',
-        display: 'block',
-      }} />
-      <div style={{color: 'white', fontWeight: '600', cursor: 'pointer',
-      }}>Reload</div>
+      <ErrorOutlineIcon
+        alt=""
+        style={{
+          height: '2rem',
+          width: '2rem',
+          margin: '0 auto 0.5rem auto',
+          display: 'block',
+        }}
+      />
+      <div style={{color: 'white', fontWeight: '600', cursor: 'pointer'}}>
+        Reload
+      </div>
     </div>
   );
 
-  return (
-    <div style={{display: 'flex'}} >
-      {false ?
-                blogContent :
-             loading }
-    </div>
-  );
+  return <div style={{display: 'flex'}}>{false ? blogContent : loading}</div>;
 }

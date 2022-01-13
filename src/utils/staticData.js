@@ -21,12 +21,12 @@ export const dashboardCardsData = [
 
 export const dataStructureTopics = [
   {
-    topic: 'Implementation',
-    slug: 'implementation',
+    topic: 'Introduction',
+    slug: 'introduction',
     desc: `A linked list is a linear collection of data elements whose
     order is not given by their physical
     placement in memory. Instead, each element points to the next.`,
-    api: 'implementation.do',
+    api: 'introduction.do',
     color: COLORS.green,
   },
   {

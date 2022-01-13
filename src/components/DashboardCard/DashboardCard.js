@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable require-jsdoc */
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
@@ -11,33 +9,36 @@ export default function DashboardCard(props) {
   const {title, slug} = props;
   return (
     <div style={{height: '100%'}}>
-      <Card sx={{
-        border: '1px solid #353535',
-        backgroundImage: 'radial-gradient(black 1px, transparent 0)',
-        backgroundSize: '20px 20px',
-        cursor: 'pointer',
-        height: '100%',
-      }}>
-        <CardContent sx={{background: 'none',
-          height: '50%'}}>
+      <Card
+        sx={{
+          border: '1px solid #353535',
+          backgroundImage: 'radial-gradient(black 1px, transparent 0)',
+          backgroundSize: '20px 20px',
+          cursor: 'pointer',
+          height: '100%',
+        }}
+      >
+        <CardContent sx={{background: 'none', height: '50%'}}>
           <Typography gutterBottom variant="h3" component="div" to={slug}>
             {title}
           </Typography>
         </CardContent>
-        <CardContent sx={{background: 'none', height: '51%',
-        }}
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-end',
-        }}
+        <CardContent
+          sx={{background: 'none', height: '51%'}}
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+          }}
         >
           <Button
             disableRipple
             style={{height: '3rem', marginTop: '1rem', background: 'black'}}
             endIcon={<ArrowForwardIcon />}
             variant="contained"
-          >Get Started</Button>
+          >
+            Get Started
+          </Button>
         </CardContent>
       </Card>
     </div>

@@ -18,24 +18,42 @@ export default function Dashboard(props) {
   };
 
   useEffect(() => {
-    setDrawerItems({
-      'Data Structures': 'data-structures',
-      'Algorithms': 'algorithms',
-      'Codeforce': 'codeforces',
-      'Questions': 'questions',
-    });
+    setDrawerItems([
+      {
+        topic: 'Data Structures',
+        slug: 'data-structures',
+      },
+      {
+        topic: 'Algorithms',
+        slug: 'algorithms',
+      },
+      {
+        topic: 'Codeforce',
+        slug: 'codeforces',
+      },
+      {
+        topic: 'Questions',
+        slug: 'questions',
+      },
+    ]);
   }, []);
 
   return (
     <div id="content-container">
-      <Grid container
-        rowSpacing={2} columnSpacing={2} columns={{xs: 1, sm: 2}} gutterBottom>
+      <Grid
+        container
+        rowSpacing={2}
+        columnSpacing={2}
+        columns={{xs: 1, sm: 2}}
+        gutterBottom
+      >
         {dashboardCardsData.map((item) => (
           <Grid item xs={1} sm={1} sx={{height: '27vh'}} key={item.slug}>
             <Link
-              to='/topics'
+              to="/topics"
               style={{textDecoration: 'none'}}
-              onClick={() => handleClick(item.slug)}>
+              onClick={() => handleClick(item.slug)}
+            >
               <DashboardCard
                 title={item.title}
                 slug={item.slug}
@@ -46,13 +64,18 @@ export default function Dashboard(props) {
         ))}
       </Grid>
       <Toolbar>
-        <Typography variant="h6" noWrap component="div" >
-                    Suggested Readings
+        <Typography variant="h6" noWrap component="div">
+          Suggested Readings
         </Typography>
         <ChevronRightIcon />
       </Toolbar>
-      <Grid container rowSpacing={2}
-        columnSpacing={2} columns={{xs: 1, sm: 2, md: 3, lg: 4}} gutterBottom>
+      <Grid
+        container
+        rowSpacing={2}
+        columnSpacing={2}
+        columns={{xs: 1, sm: 2, md: 3, lg: 4}}
+        gutterBottom
+      >
         {dataStructureTopics.slice(0, 4).map((item, index) => (
           <Grid item xs={1} sm={1} key={item}>
             <ContentCard

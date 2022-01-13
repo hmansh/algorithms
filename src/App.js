@@ -35,15 +35,27 @@ export default function App() {
     setCurrentTopic(topic);
   };
 
-  const [drawerItems, setDrawerItems] = useState({});
+  const [drawerItems, setDrawerItems] = useState([]);
 
   useEffect(() => {
-    setDrawerItems({
-      'Data Structures': 'data-structures',
-      'Algorithms': 'algorithms',
-      'Codeforce': 'codeforces',
-      'Questions': 'questions',
-    });
+    setDrawerItems([
+      {
+        topic: 'Data Structures',
+        slug: 'data-structures',
+      },
+      {
+        topic: 'Algorithms',
+        slug: 'algorithms',
+      },
+      {
+        topic: 'Codeforce',
+        slug: 'codeforces',
+      },
+      {
+        topic: 'Questions',
+        slug: 'questions',
+      },
+    ]);
   }, []);
 
   const drawerData = {
@@ -69,12 +81,16 @@ export default function App() {
     <BrowserRouter>
       <div className="App">
         <Box sx={{display: 'flex'}}>
-          <AppBar position="fixed" open={drawerOpen} sx={{
-            // background: COLORS.header
-            boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px',
-            background: 'rgba(23,23,23,0.92)',
-            backdropFilter: 'saturate(180%) blur(20px)',
-          }}>
+          <AppBar
+            position="fixed"
+            open={drawerOpen}
+            sx={{
+              // background: COLORS.header
+              boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px',
+              background: 'rgba(23,23,23,0.92)',
+              backdropFilter: 'saturate(180%) blur(20px)',
+            }}
+          >
             <Toolbar>
               <IconButton
                 color="inherit"
@@ -87,7 +103,11 @@ export default function App() {
               </IconButton>
               <Link to="/home" style={{textDecoration: 'none'}}>
                 <Typography
-                  variant="h6" noWrap component="div" style={{color: 'white'}} >
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  style={{color: 'white'}}
+                >
                   binarySearchTrees.com
                 </Typography>
               </Link>
@@ -103,35 +123,43 @@ export default function App() {
                 boxSizing: 'border-box',
               },
             }}
-            variant='persistent'
-            anchor='left'
+            variant="persistent"
+            anchor="left"
             open={drawerOpen}
           >
             <DrawerHeader>
-              <IconButton onClick={handleDrawerOperation} sx={{color: 'white'}}>
+              <IconButton
+                onClick={handleDrawerOperation}
+                sx={{color: 'white'}}
+              >
                 <MenuIcon />
               </IconButton>
             </DrawerHeader>
             <Divider />
             <MyList>
-              {Object.keys(drawerItems).map((key, index) => (
-                <Link to='/topics'
+              {drawerItems.map((item, index) => (
+                <Link
+                  to={item['slug']}
                   style={{textDecoration: 'none'}}
-                  onClick={() => handleCurrentTopic(drawerItems[key])}
-                  key={index}>
+                  onClick={() => handleCurrentTopic(item['topic'])}
+                  key={index}
+                >
                   <ListItem disableRipple button>
-                    <ListItemText primary={key}/>
+                    <ListItemText primary={item['topic']} />
                   </ListItem>
                 </Link>
               ))}
             </MyList>
           </Drawer>
-          <Main open={drawerOpen} style={{
-            backgroundImage: 'radial-gradient(#323232 1px, transparent 0)',
-            backgroundSize: '25px 25px',
-          }}>
+          <Main
+            open={drawerOpen}
+            style={{
+              backgroundImage: 'radial-gradient(#323232 1px, transparent 0)',
+              backgroundSize: '25px 25px',
+            }}
+          >
             <DrawerHeader />
-            <div className='view'>
+            <div className="view">
               <View
                 cardList={drawerData[currentTopic].data}
                 setDrawerItems={setDrawerItems}
