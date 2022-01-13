@@ -53,7 +53,7 @@ export default function Dashboard(props) {
       </Toolbar>
       <Grid container rowSpacing={2}
         columnSpacing={2} columns={{xs: 1, sm: 2, md: 3, lg: 4}} gutterBottom>
-        {dataStructureTopics.slice(0, 4).map((item) => (
+        {dataStructureTopics.slice(0, 4).map((item, index) => (
           <Grid item xs={1} sm={1} key={item}>
             <ContentCard
               topic={item.topic}
@@ -61,6 +61,7 @@ export default function Dashboard(props) {
               desc={item.desc}
               api={item.api}
               color={item.color}
+              pos={index}
             />
           </Grid>
         ))}

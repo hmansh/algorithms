@@ -18,7 +18,7 @@ export default function Grid(props) {
   return (
     <div id="content-container">
       {cardList.length ? <div className='grid-container'>
-        {cardList.map((item) => (
+        {cardList.map((item, index) => (
           <div className='grid-item' key={item}>
             <Link to="/blog" style={{textDecoration: 'none'}}>
               <ContentCard
@@ -27,6 +27,7 @@ export default function Grid(props) {
                 desc={item.desc}
                 api={item.api}
                 color={item.color}
+                pos={index}
               />
             </Link>
           </div>
