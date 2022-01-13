@@ -46,23 +46,3 @@ export default function ContentCard(props) {
     </div>
   );
 }
-
-{/* <CardMedia
-          sx={{background: color || '#fff', height: '30%'}}
-        >one</CardMedia>
-        <CardContent sx={{
-          background: '#131313',
-          color: color || '#fff', height: '70%',
-        }}>
-          <Typography gutterBottom variant="h5" component="div">
-            {topic}
-          </Typography>
-          <div style={{maxHeight: '55%'}}>
-            <Typography sx={{
-              color: 'white', fontSize: '0.8em',
-              whiteSpace: 'no-wrap', overflow: 'hidden',
-              textOverflow: 'ellipsis'}}>
-              {desc}
-            </Typography>
-          </div>
-        </CardContent> */}

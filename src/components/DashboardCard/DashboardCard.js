@@ -4,6 +4,8 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function DashboardCard(props) {
   const {title, slug} = props;
@@ -16,10 +18,26 @@ export default function DashboardCard(props) {
         cursor: 'pointer',
         height: '100%',
       }}>
-        <CardContent sx={{background: 'none', height: '100%'}}>
-          <Typography gutterBottom variant="h2" component="div" to={slug}>
+        <CardContent sx={{background: 'none',
+          height: '50%'}}>
+          <Typography gutterBottom variant="h3" component="div" to={slug}>
             {title}
           </Typography>
+        </CardContent>
+        <CardContent sx={{background: 'none', height: '51%',
+        }}
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'flex-end',
+        }}
+        >
+          <Button
+            disableRipple
+            style={{height: '3rem', marginTop: '1rem', background: 'black'}}
+            endIcon={<ArrowForwardIcon />}
+            variant="contained"
+          >Get Started</Button>
         </CardContent>
       </Card>
     </div>
