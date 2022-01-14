@@ -22,46 +22,6 @@ const breadcrumbs = [
   <Typography key="3">Merge Two Linked Lists</Typography>,
 ];
 
-const text = `
-### Subheading One
-Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
-
-#
-#
-
-##### Subheading Two 
-Google’s Quantum AI [CommonMark](https://commonmark.org) has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
-
-#
-
-![alt text](https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/09/Impossible-Math_2880x1220_LHPA.jpg)
-
-1. Google’s Quantum AI team has had a productive 2021.
-2. Google’s Quantum AI team has had a productive 2021.Google’s Quantum AI team has had a productive 2021.
-3. Google’s Quantum AI team has had a.
-
-#
-#
-
-### Subheading One
-Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
-
-### Subheading One
-Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
-
-### Subheading One
-Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
-
-![alt text](https://d2r55xnwy6nx47.cloudfront.net/uploads/2020/09/Impossible-Math_2880x1220_LHPA.jpg)
-
-### Subheading One
-Google’s Quantum AI team has had a productive 2021. Despite ongoing global challenges, we’ve made significant progress in our effort to build a fully error-corrected quantum computer, working towards our next hardware milestone of building an error-corrected quantum bit (qubit) prototype. At the same time, we have continued our commitment to realizing the potential of quantum computers in various applications. That's why we published results in top journals, collaborated with researchers across academia and industry, and expanded our team to bring on new talent and expertise.
-
-
-#
-#
-`;
-
 export default function Blog(props) {
   const {setDrawerItems, subTopics} = props;
 
@@ -105,7 +65,7 @@ export default function Blog(props) {
         </IconButton>
       </div>
       <div className="article" style={{padding: '10px'}}>
-        <ReactMarkdown>{text}</ReactMarkdown>
+        <ReactMarkdown>{subTopics[0]?.article}</ReactMarkdown>
       </div>
     </div>
   );
@@ -141,5 +101,5 @@ export default function Blog(props) {
     </div>
   );
 
-  return <div style={{display: 'flex'}}>{false ? blogContent : loading}</div>;
+  return <div style={{display: 'flex'}}>{true ? blogContent : loading}</div>;
 }

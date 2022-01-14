@@ -1,15 +1,13 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
 
 export default function ContentCard(props) {
   const {topic, desc, pos} = props;
   const blue = '#0071f5';
   const yellow = '#fbbf23';
   return (
-    <div style={{height: '100%', minHeight: '27vh'}}>
+    <div style={{height: '100%', minHeight: '28vh'}}>
       <Card
         sx={{
           border: '5px solid white',

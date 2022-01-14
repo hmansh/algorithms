@@ -24,11 +24,10 @@ export const TopicList = styled(List)({
 export const MyList = styled(List)({
   '& .MuiListItem-root': {
     'color': '#fff',
-    'paddingLeft': 24,
-    'paddingRight': 24,
-    'width': '95%',
+    // 'paddingLeft': 0,
+    // 'paddingRight': 0,
+    'width': '100%',
     'margin': 'auto',
-    'borderRadius': 5,
     '&:hover': {
       background: COLORS.drawerBtnHover,
     },

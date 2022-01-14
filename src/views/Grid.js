@@ -6,7 +6,7 @@ import axios from 'axios';
 import spinner from '../utils/spinner.svg';
 
 export default function Grid(props) {
-  const {cardList, setCurrentSubTopic, setSubTopics} = props;
+  const {setSubTopics} = props;
   const [loading, setLoading] = useState(true);
   const [topicData, setTopicData] = useState({});
   const [error, setError] = useState(false);
@@ -24,10 +24,10 @@ export default function Grid(props) {
     });
   }, []);
 
-  const handleCardClick = (subTopic) => {
-    console.log(subTopic);
-    setCurrentSubTopic(subTopic);
-  };
+  // const handleCardClick = (subTopic) => {
+  //   console.log(subTopic);
+  //   setCurrentSubTopic(subTopic);
+  // };
 
   const loadingSpinner = (
     <img
