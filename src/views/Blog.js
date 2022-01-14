@@ -11,7 +11,6 @@ import '../styles/App.css';
 import spinner from '../utils/spinner.svg';
 import '../styles/App.css';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
-import axios from 'axios';
 
 const breadcrumbs = [
   <Link underline="hover" key="1" color="inherit" href="/">
@@ -64,22 +63,10 @@ Google’s Quantum AI team has had a productive 2021. Despite ongoing global cha
 `;
 
 export default function Blog(props) {
-  const {setDrawerItems, currentSubTopic} = props;
+  const {setDrawerItems, subTopics} = props;
 
   useEffect(() => {
-    axios
-        .get('http://localhost:8081/getAll.do')
-        .then((response) => {
-          const res = {
-            ...response.data.filter((item) => {
-              return item['subTopic'] === currentSubTopic;
-            }),
-          }[0]['data'];
-          setDrawerItems(res);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    setDrawerItems(subTopics);
   }, []);
 
   const blogContent = (

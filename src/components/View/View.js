@@ -6,27 +6,32 @@ import {Route, Routes} from 'react-router-dom';
 import '../../styles/App.css';
 
 export default function View(props) {
-  const {cardList, setCurrentTopic, setDrawerItems} = props;
+  const {cardList, setCurrentTopic, setDrawerItems, currentTopic} = props;
   const [currentSubTopic, setCurrentSubTopic] = useState('');
+  const [subTopics, setSubTopics] = useState([]);
+
   return (
     <div id="view-container">
       <Routes>
         <Route
-          path="/home"
+          path="/"
+          exact
           element={
             <Dashboard
               setDrawerItems={setDrawerItems}
-              setTopic={setCurrentTopic}
+              setCurrentTopic={setCurrentTopic}
+              currentTopic={currentTopic}
             />
           }
         />
         <Route
-          path="/topics"
+          path={currentTopic}
           element={
             <Grid
               setDrawerItems={setDrawerItems}
               cardList={cardList}
               setCurrentSubTopic={setCurrentSubTopic}
+              setSubTopics={setSubTopics}
             />
           }
         />
@@ -36,6 +41,8 @@ export default function View(props) {
             <Blog
               setDrawerItems={setDrawerItems}
               currentSubTopic={currentSubTopic}
+              setSubTopics={setSubTopics}
+              subTopics={subTopics}
             />
           }
         />

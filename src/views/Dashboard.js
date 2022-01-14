@@ -10,11 +10,11 @@ import ContentCard from '../components/Card/Card.js';
 import {Link} from 'react-router-dom';
 
 export default function Dashboard(props) {
-  const {setTopic, setDrawerItems} = props;
+  const {setCurrentTopic, setDrawerItems, currentTopic} = props;
 
   const handleClick = (topic) => {
     console.log(topic);
-    setTopic(topic);
+    setCurrentTopic(topic);
   };
 
   useEffect(() => {
@@ -48,11 +48,12 @@ export default function Dashboard(props) {
         gutterBottom
       >
         {dashboardCardsData.map((item) => (
-          <Grid item xs={1} sm={1} sx={{height: '27vh'}} key={item.slug}>
+          <Grid item xs={1} sm={1} sx={{height: '27vh'}} key={item.slug}
+            onClick={() => handleClick(item.slug)}
+          >
             <Link
-              to="/topics"
+              to={currentTopic}
               style={{textDecoration: 'none'}}
-              onClick={() => handleClick(item.slug)}
             >
               <DashboardCard
                 title={item.title}

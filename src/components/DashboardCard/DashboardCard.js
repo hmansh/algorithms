@@ -13,7 +13,7 @@ export default function DashboardCard(props) {
         sx={{
           border: '1px solid #353535',
           backgroundImage: 'radial-gradient(black 1px, transparent 0)',
-          backgroundSize: '20px 20px',
+          backgroundSize: '25px 25px',
           cursor: 'pointer',
           height: '100%',
         }}

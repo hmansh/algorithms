@@ -1,30 +1,27 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import ContentCard from '../components/Card/Card';
 import {Link} from 'react-router-dom';
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
+import axios from 'axios';
+import spinner from '../utils/spinner.svg';
 
 export default function Grid(props) {
-  const {cardList, setDrawerItems, setCurrentSubTopic} = props;
+  const {cardList, setCurrentSubTopic, setSubTopics} = props;
+  const [loading, setLoading] = useState(true);
+  const [topicData, setTopicData] = useState({});
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    setDrawerItems([
-      {
-        topic: 'Data Structures',
-        slug: 'data-structures',
-      },
-      {
-        topic: 'Algorithms',
-        slug: 'algorithms',
-      },
-      {
-        topic: 'Codeforce',
-        slug: 'codeforces',
-      },
-      {
-        topic: 'Questions',
-        slug: 'questions',
-      },
-    ]);
+    axios.get('http://localhost:8081/getTopic?topic=data-structures').then(
+        (response) => {
+          setTopicData({...response.data});
+          setLoading(false);
+          setError(true);
+        },
+    ).catch((error) => {
+      console.log(error);
+      setError(true);
+    });
   }, []);
 
   const handleCardClick = (subTopic) => {
@@ -32,23 +29,37 @@ export default function Grid(props) {
     setCurrentSubTopic(subTopic);
   };
 
+  const loadingSpinner = (
+    <img
+      src={spinner}
+      alt=""
+      style={{
+        height: '3rem',
+        width: '3rem',
+        margin: '35vh auto',
+        display: 'block',
+      }}
+    />
+  );
+
   return (
     <div id="content-container">
-      {cardList.length ? (
+      {!loading ? (
         <div className="grid-container">
-          {cardList.map((item, index) => (
-            <div className="grid-item" key={item}>
+          {topicData?.topicList?.map((item, index) => (
+            <div className="grid-item" key={index}>
               <Link
                 to="/blog"
                 style={{textDecoration: 'none'}}
-                onClick={() => handleCardClick(item.topic)}
+                onClick={() => setSubTopics(item.subTopicList)}
               >
                 <ContentCard
                   topic={item.topic}
                   slug={item.slug}
                   desc={item.desc}
-                  api={item.api}
+                  uid={item.uid}
                   color={item.color}
+                  // subTopics={item.subTopicList}
                   pos={index}
                 />
               </Link>
@@ -64,15 +75,15 @@ export default function Grid(props) {
             justifyContent: 'space-around',
           }}
         >
-          <div style={{display: 'flex', flexDirection: 'column'}}>
-            <ErrorOutlineOutlinedIcon
-              large
-              style={{
-                margin: '35vh auto 0.5rem auto',
-              }}
-            />
-            <div style={{whiteSpace: 'nowrap'}}>Oops! nothings here</div>
-          </div>
+          {!error ? loadingSpinner :
+              <div style={{display: 'flex', flexDirection: 'column'}}>
+                <ErrorOutlineOutlinedIcon
+                  large
+                  style={{
+                    margin: '35vh auto 0.5rem auto',
+                  }} /><div style={{whiteSpace: 'nowrap'}}>Oops! nothings here
+                </div></div>
+          }
         </div>
       )}
     </div>
