@@ -5,37 +5,126 @@
 }
 
 @font-face {
-    font-family: 'Karla';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/karla/v15/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaHUlKd7c.woff2) format('woff2');
-  }
-
-  /* latin */
-@font-face {
-    font-family: 'Karla';
-    font-style: normal;
-    font-weight: 400;
-    src: url(https://fonts.gstatic.com/s/karla/v15/qkBIXvYC6trAT55ZBi1ueQVIjQTD-JqaE0lK.woff2) format('woff2');
+    font-family: 'extra-light';
+    src: url('./assests/Karla-ExtraLight.ttf');
+    font-weight: 100;
 }
-  
 
-body {
-    font-family: 'Karla', Helvetica, sans-serif;
+@font-face {
+    font-family: 'light';
+    src: url('./assests/Karla-Light.ttf');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'regular';
+    src: url('./assests/Karla-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'bold';
+    src: url('./assests/Karla-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'extra-bold';
+    src: url('./assests/Karla-Bold.ttf');
+    font-weight: 600;
+}
+
+.xs {
+    font-size: 10px;
+}
+
+.sm {
+    font-size: 17px;
+}
+
+.md {
+    font-size: 22px;
+}
+
+.lg {
+    font-size: 28px;
+}
+
+.xl {
+    font-size: 34px;
+}
+
+.extra-light {
+    font-family: 'extra-light';
+    font-weight: 100;
+}
+
+.light {
+    font-family: 'light';
+    font-weight: 200;
+}   
+
+.regular {
+    font-family: 'regular';
+    font-weight: 400;
+}
+
+.bold {
+    font-family: 'bold';
+    font-weight: 500;
+}
+
+.extra-bold {
+    font-family: 'extra-bold';
+    font-weight: 600;
+}
+
+
+.blue {
+    color: #134DB6;
+}
+
+.black {
+    color: #1F1F1F;
+}
+
+.grey {
+    color : #4A4A4A;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    /* width: 10rem; */
+}
+
+.twitter {
+    /* background-image: url('./assests/twitter-thumb.png');
+    background-size: cover;
+    height: 2rem;
+    width: 2rem; */
+}
+
+.blogs {
+    /* background-image: url('./assests/star.svg');
+    background-size: cover;
+    height: 2rem;
+    width: 2rem; */
+}
+
+.goals {
+    /* background-image: url('./assests/planet.svg');
+    background-size: cover;
+    height: 2rem;
+    width: 2rem; */
 }
 
 .app {
     min-height: 100vh;
     border: 1px solid white;
 }
-
-.extra-light {
-    font-weight: 100;
-}
-
-.light {
-    font-weight: 600;
-}   
 
 .navigation, .content {
     display: flex;
@@ -47,6 +136,7 @@ body {
 
 .content {
     flex-direction: column;
+    /* border: 1px solid red; */
 }
 
 .home-body {
@@ -61,11 +151,11 @@ body {
 }
 
 .home-footer {
-    padding: 10px;
+    padding: 30px 10px;
 }
 
 .left {
-    width: 60%;
+    width: 70%;
 }
 
 .right {
@@ -99,15 +189,8 @@ body {
     }
 }
 
-.blue {
-    color: #134DB6;
-}
-
 .para {
     margin: 15px 0;
-    font-style: normal;
-    font-weight: 100;
-    font-size: 0.9rem;
     line-height: 22px;
 }
 
@@ -115,3 +198,25 @@ body {
 }
 
 /* header */
+
+
+/* goals */
+
+.goal {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.goal-checkbox {
+    width: 15%;
+}
+
+.goal-text {
+    width: 80%;
+    text-align: left;
+}
+
+.completed {
+    text-decoration: line-through;
+}
