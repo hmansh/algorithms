@@ -33,15 +33,11 @@ export default function Goals() {
     console.log(checked);
     if (checked) {
       return (
-        <div className='checked'>
-          {/* Done */}
-        </div>
+        <div className='checked'></div>
       );
     } else {
       return (
-        <div className='unchecked'>
-          {/* Not Done */}
-        </div>
+        <div className='unchecked'></div>
       );
     }
   };
@@ -57,6 +53,7 @@ export default function Goals() {
             <div className={`goal-text regular sm ${goal.completed ? 'completed' : ''}`}>
               {goal.text}
             </div>
+            {/* <div className='thing-img'></div> */}
           </div>);
         })
       }

@@ -35,11 +35,11 @@
 }
 
 .xs {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .sm {
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .md {
@@ -166,11 +166,12 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .company-name {
   text-align: right;
+  padding-bottom: 1.5rem;
 }
 
 @media (max-width: 550px) {
@@ -211,7 +212,7 @@
 }
 
 .goal-checkbox {
-  width: 15%;
+  width: 8%;
   display: flex;
   justify-content: space-around;
 }
@@ -223,22 +224,24 @@
 
 .completed {
   text-decoration: line-through;
+  text-decoration-color: #134db6;
+  color: #134db6;
 }
 
 .checked {
-    background-image: url('./assests/completed.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 2rem;
-    height: 2rem;
+  background-image: url("./assests/completed.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
 }
 
 .unchecked {
-    background-image: url('./assests/pending.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 2rem;
-    height: 2rem;
+  background-image: url("./assests/pending.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* navigation */
@@ -300,6 +303,10 @@
   .navbar-links {
     display: none;
   }
+
+  .header {
+    margin: 10px auto;
+  }
 }
 
 .drawer {
@@ -358,18 +365,39 @@
 
 .b-header {
   padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.b-header:hover {
+  font-weight: 600;
 }
 
 .b-abstract {
 }
 
 .new {
-    background-image: url('./assests/new.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 20px;
-    width: 30px;
-    display: inline-block;
+  background-image: url("./assests/new.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20px;
+  width: 30px;
+  display: inline-block;
 }
 
+.thing-img {
+  background-image: url('./assests/painter.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  height: 12rem;
+  width: 12rem;
+}
+
+@media (max-width: 1200px) {
+  .thing-img {
+    display: none;
+  }
+}

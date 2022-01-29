@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 
 export default function Home() {
@@ -7,6 +6,7 @@ export default function Home() {
       <div className="container home-header">
         <h1 className='extra-bold xl black'>person; n</h1>
       </div>
+      <div className='curved-arrow-img'></div>
       <div className="container home-body">
         <div className="left container">
           <p className="para extra-light sm">Technology has been my thing since my father bought me my first computer, it is a field that makes me so intrigued and curious to explore the technical impact it has on people, communities, and businesses.</p>
@@ -15,24 +15,19 @@ export default function Home() {
         </div>
         <div className="right container">
           <div className='company-name'>
-            <h3 className='blue regular sm'>company name</h3>
-            <h5 className='extra-light xs'>july 2020 - august 2021</h5>
+            <h3 className='blue bold sm'>HighRadius Corp</h3>
+            <h3 className='black regular xs'>SDE Intern</h3>
+            <h5 className='extra-light xs'>June 2021 - Present</h5>
           </div>
           <div className='company-name'>
-            <h3 className='blue regular sm'>company name</h3>
-            <h5 className='extra-light xs'>july 2020 - august 2021</h5>
+            <h3 className='blue bold sm'>Samsung Research</h3>
+            <h3 className='black regular xs'>Research Fellow</h3>
+            <h5 className='extra-light xs'>April 2021 - Dec 2021</h5>
           </div>
           <div className='company-name'>
-            <h3 className='blue regular sm'>company name</h3>
-            <h5 className='extra-light xs'>july 2020 - august 2021</h5>
-          </div>
-          <div className='company-name'>
-            <h3 className='blue regular sm'>company name</h3>
-            <h5 className='extra-light xs'>july 2020 - august 2021</h5>
-          </div>
-          <div className='company-name'>
-            <h3 className='blue regular sm'>company name</h3>
-            <h5 className='extra-light xs'>july 2020 - august 2021</h5>
+            <h3 className='blue bold sm'>KiiT University</h3>
+            <h3 className='black regular xs'>Computer Science</h3>
+            <h5 className='extra-light xs'>july 2018 - june 2022</h5>
           </div>
         </div>
       </div>
