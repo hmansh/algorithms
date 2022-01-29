@@ -53,7 +53,6 @@ export default function Goals() {
             <div className={`goal-text regular sm ${goal.completed ? 'completed' : ''}`}>
               {goal.text}
             </div>
-            {/* <div className='thing-img'></div> */}
           </div>);
         })
       }

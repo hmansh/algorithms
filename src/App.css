@@ -116,13 +116,6 @@
   vertical-align: middle;
 }
 
-.goals {
-  /* background-image: url('./assests/planet.svg');
-    background-size: cover;
-    height: 2rem;
-    width: 2rem; */
-}
-
 .app {
   min-height: 100vh;
   border: 1px solid white;
@@ -314,6 +307,7 @@
   height: 100vh;
   width: 100%;
   background: white;
+  animation: transitionIn 0.75s;
 }
 
 .drawer-item {
@@ -372,9 +366,6 @@
   font-weight: 600;
 }
 
-.b-abstract {
-}
-
 .new {
   background-image: url("./assests/new.png");
   background-size: contain;
@@ -399,5 +390,14 @@
 @media (max-width: 1200px) {
   .thing-img {
     display: none;
+  }
+}
+
+@keyframes transitionIn {
+  to {
+    transform: rotateY(0deg);
+  }
+  from {
+    transform: rotateY(-50deg);
   }
 }
