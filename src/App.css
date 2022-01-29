@@ -1,197 +1,200 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
-    font-family: 'extra-light';
-    src: url('./assests/Karla-ExtraLight.ttf');
-    font-weight: 100;
+  font-family: "extra-light";
+  src: url("./assests/Karla-ExtraLight.ttf");
+  font-weight: 100;
 }
 
 @font-face {
-    font-family: 'light';
-    src: url('./assests/Karla-Light.ttf');
-    font-weight: 200;
+  font-family: "light";
+  src: url("./assests/Karla-Light.ttf");
+  font-weight: 200;
 }
 
 @font-face {
-    font-family: 'regular';
-    src: url('./assests/Karla-Regular.ttf');
-    font-weight: 400;
+  font-family: "regular";
+  src: url("./assests/Karla-Regular.ttf");
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: 'bold';
-    src: url('./assests/Karla-Medium.ttf');
-    font-weight: 500;
+  font-family: "bold";
+  src: url("./assests/Karla-Medium.ttf");
+  font-weight: 500;
 }
 
 @font-face {
-    font-family: 'extra-bold';
-    src: url('./assests/Karla-Bold.ttf');
-    font-weight: 600;
+  font-family: "extra-bold";
+  src: url("./assests/Karla-Bold.ttf");
+  font-weight: 600;
 }
 
 .xs {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 .sm {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 .md {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .lg {
-    font-size: 28px;
+  font-size: 28px;
 }
 
 .xl {
-    font-size: 34px;
+  font-size: 34px;
 }
 
 .extra-light {
-    font-family: 'extra-light';
-    font-weight: 100;
+  font-family: "extra-light";
+  font-weight: 100;
 }
 
 .light {
-    font-family: 'light';
-    font-weight: 200;
-}   
+  font-family: "light";
+  font-weight: 200;
+}
 
 .regular {
-    font-family: 'regular';
-    font-weight: 400;
+  font-family: "regular";
+  font-weight: 400;
 }
 
 .bold {
-    font-family: 'bold';
-    font-weight: 500;
+  font-family: "bold";
+  font-weight: 500;
 }
 
 .extra-bold {
-    font-family: 'extra-bold';
-    font-weight: 600;
+  font-family: "extra-bold";
+  font-weight: 600;
 }
 
-
 .blue {
-    color: #134DB6;
+  color: #134db6;
 }
 
 .black {
-    color: #1F1F1F;
+  color: #1f1f1f;
 }
 
 .grey {
-    color : #4A4A4A;
+  color: #4a4a4a;
 }
 
 .btn {
-    outline: none;
-    border: none;
-    background: none;
-    cursor: pointer;
-    /* width: 10rem; */
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .twitter {
-    /* background-image: url('./assests/twitter-thumb.png');
-    background-size: cover;
-    height: 2rem;
-    width: 2rem; */
+  background-image: url("./assests/twitter-thumb.png");
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+  margin-left: 2rem;
+  vertical-align: middle;
 }
 
-.blogs {
-    /* background-image: url('./assests/star.svg');
-    background-size: cover;
-    height: 2rem;
-    width: 2rem; */
+.back {
+  background-image: url("./assests/arrow-back.svg");
+  background-size: cover;
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
 }
 
 .goals {
-    /* background-image: url('./assests/planet.svg');
+  /* background-image: url('./assests/planet.svg');
     background-size: cover;
     height: 2rem;
     width: 2rem; */
 }
 
 .app {
-    min-height: 100vh;
-    border: 1px solid white;
+  min-height: 100vh;
+  border: 1px solid white;
 }
 
-.navigation, .content {
-    display: flex;
-    justify-content: space-between;
-    margin: 3rem auto;
-    max-width: 800px;
-    height: 3rem;
+.navigation,
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem auto;
+  max-width: 800px;
+  height: 3rem;
 }
 
 .content {
-    flex-direction: column;
-    /* border: 1px solid red; */
+  flex-direction: column;
+  /* border: 1px solid red; */
 }
 
 .home-body {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
 .home-header {
-    padding: 10px;
-    text-transform: lowercase;
+  padding: 10px;
+  text-transform: lowercase;
 }
 
 .home-footer {
-    padding: 30px 10px;
+  padding: 30px 10px;
 }
 
 .left {
-    width: 70%;
+  width: 70%;
 }
 
 .right {
-    width: 30%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 30%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .company-name {
-    text-align: right;
+  text-align: right;
 }
 
 @media (max-width: 550px) {
-    .home-body {
-        flex-direction: column;
-    }
+  .home-body {
+    flex-direction: column;
+  }
 
-    .left {
-        width: 100%;
-    }
+  .left {
+    width: 100%;
+  }
 
-    .right {
-        width: 100%;
-    }
+  .right {
+    width: 100%;
+  }
 
-    .company-name {
-        text-align: left;
-        padding: 10px 0;
-    }
+  .company-name {
+    text-align: left;
+    padding: 10px 0;
+  }
 }
 
 .para {
-    margin: 15px 0;
-    line-height: 22px;
+  margin: 15px 0;
+  line-height: 22px;
 }
 
 .container {
@@ -199,24 +202,174 @@
 
 /* header */
 
-
 /* goals */
 
 .goal {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
 }
 
 .goal-checkbox {
-    width: 15%;
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
 }
 
 .goal-text {
-    width: 80%;
-    text-align: left;
+  width: 80%;
+  text-align: left;
 }
 
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
+
+.checked {
+    background-image: url('./assests/completed.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+.unchecked {
+    background-image: url('./assests/pending.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 2rem;
+    height: 2rem;
+}
+
+/* navigation */
+
+.header {
+  margin: 5vh auto;
+  max-width: 810px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-links {
+  margin: 0.5rem;
+}
+
+.navbar-links ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: black;
+  padding: 1rem;
+  display: block;
+}
+
+.navbar-links li:hover a {
+  color: #134db6;
+}
+
+.toggle-btn {
+  position: relative;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("./assests/menu.svg");
+  background-size: cover;
+  height: 2rem;
+  width: 2rem;
+  vertical-align: middle;
+}
+
+@media (max-width: 600px) {
+  .toggle-btn {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+}
+
+.drawer {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: white;
+}
+
+.drawer-item {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-item .btn {
+  text-align: left;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding-top: 0.76rem;
+}
+
+.close-btn {
+  background-image: url("./assests/close.svg");
+  background-size: cover;
+  height: 1.5rem;
+  width: 1.5rem;
+  vertical-align: middle;
+  outline: none;
+  border: none;
+  background-color: white;
+}
+
+/* blogs */
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: rgba(19, 77, 182, 0.31);
+}
+
+/* Neww ---------------------------- */
+
+.blog-section {
+  padding: 20px 10px 20px 10px;
+}
+
+.section-title {
+  padding: 10px;
+}
+
+.b-container {
+  padding: 20px 10px 0px 10px;
+}
+
+.b-header {
+  padding-bottom: 10px;
+}
+
+.b-abstract {
+}
+
+.new {
+    background-image: url('./assests/new.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 20px;
+    width: 30px;
+    display: inline-block;
+}
+
