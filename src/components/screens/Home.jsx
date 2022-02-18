@@ -45,7 +45,7 @@ export default function Home() {
         </div>
       </div>
       <div className="container home-footer">
-        <div className='bold md black'>Oh. In my spare time I ride <span className='blue'>bikes</span>.</div>
+        <div className='bold md black'>Oh. In my spare time I do <span className='blue'>Design</span>.</div>
       </div>
     </div>
   );

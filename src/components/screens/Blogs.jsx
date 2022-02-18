@@ -8,9 +8,9 @@ const blogSection = () => {
         <span className="new"></span>
       </h3>
       <p className="b-abstract small light">
-          No, this isn't a post about child labour. It's a post about using
-          children as props. Wait that doesn't sound right either. It's about
-          writing good components, okay?
+        No, this isn't a post about child labour. It's a post about using
+        children as props. Wait that doesn't sound right either. It's about
+        writing good components, okay?
       </p>
     </div>
   );
