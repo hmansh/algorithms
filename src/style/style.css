@@ -139,7 +139,11 @@
 
 .app {
   min-height: 100vh;
-  border: 1px solid white;
+  /* border: 1px solid red; */
+}
+
+.main-body {
+  margin: 0 10px;
 }
 
 .navigation,
@@ -149,10 +153,12 @@
   margin: 3rem auto;
   max-width: 800px;
   height: 3rem;
+  /* border: 1px solid red; */
 }
 
 .content {
   flex-direction: column;
+  /* margin-left: 20px; */
   /* border: 1px solid red; */
 }
 
@@ -214,7 +220,7 @@
   height: 5rem;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .home-body {
     flex-direction: column;
   }
@@ -466,6 +472,13 @@
   padding: 1rem;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .project-container {
+    /* border: 1px solid red; */
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .project-tile {

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Home() {
   return (
-    <>
+    <div className='main-body'>
       <div className="container home-header">
         <h1 className='extra-bold xl black'>person; n</h1>
       </div>
@@ -47,6 +47,6 @@ export default function Home() {
       <div className="container home-footer">
         <div className='bold md black'>Oh. In my spare time I ride <span className='blue'>bikes</span>.</div>
       </div>
-    </>
+    </div>
   );
 }
