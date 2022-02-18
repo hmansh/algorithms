@@ -14,20 +14,33 @@ export default function Home() {
           <p className="para extra-light sm">The work I do highlights the time and experience that I have gained over the past few years by building software. Truth be told, I honestly dont feel anything makes me happier than building good software that people would love to use.</p>
         </div>
         <div className="right container">
-          <div className='company-name'>
-            <h3 className='blue bold sm'>HighRadius Corp</h3>
-            <h3 className='black regular xs'>SDE Intern</h3>
-            <h5 className='extra-light xs'>June 2021 - Present</h5>
+          <div className="line-container">
+            <div className="circle"></div>
+            <div className="linear">
+              <div className="line"></div>
+            </div>
+            <div className="circle"></div>
+            <div className="linear">
+              <div className="line"></div>
+            </div>
+            <div className="circle"></div>
           </div>
-          <div className='company-name'>
-            <h3 className='blue bold sm'>Samsung Research</h3>
-            <h3 className='black regular xs'>Research Fellow</h3>
-            <h5 className='extra-light xs'>April 2021 - Dec 2021</h5>
-          </div>
-          <div className='company-name'>
-            <h3 className='blue bold sm'>KiiT University</h3>
-            <h3 className='black regular xs'>Computer Science</h3>
-            <h5 className='extra-light xs'>july 2018 - june 2022</h5>
+          <div className='exp-contaner'>
+            <div className='company-name'>
+              <h3 className='blue bold sm'>HighRadius Corp</h3>
+              <h3 className='black regular xs'>SDE Intern</h3>
+              <h5 className='extra-light xs'>June 2021 - Present</h5>
+            </div>
+            <div className='company-name'>
+              <h3 className='blue bold sm'>Samsung Research</h3>
+              <h3 className='black regular xs'>Research Fellow</h3>
+              <h5 className='extra-light xs'>April 2021 - Dec 2021</h5>
+            </div>
+            <div className='company-name'>
+              <h3 className='blue bold sm'>KiiT University</h3>
+              <h3 className='black regular xs'>Computer Science</h3>
+              <h5 className='extra-light xs'>july 2018 - june 2022</h5>
+            </div>
           </div>
         </div>
       </div>
