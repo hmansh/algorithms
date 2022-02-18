@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/Header';
-import Blogs from './components/Blogs';
-import Goals from './components/Goals';
-import Home from './components/Home';
+import Header from '../base/Header';
+import Blogs from '../screens/Blogs';
+import Goals from '../screens/Goals';
+import Home from '../screens/Home';
 import {Routes, Route} from 'react-router-dom';
 
 export default function App() {

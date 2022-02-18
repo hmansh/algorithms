@@ -1,5 +1,4 @@
 import React from 'react';
-import '../App.css';
 import {useNavigate, Link} from 'react-router-dom';
 
 const paths = {

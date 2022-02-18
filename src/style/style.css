@@ -4,35 +4,46 @@
   padding: 0;
 }
 
+:root {
+  --blue: #134db6;
+  --black: #1f1f1f;
+  --grey: #4a4a4a;
+  --white: #ffffff;
+}
+
+/* Font classes */
+
 @font-face {
   font-family: "extra-light";
-  src: url("./assests/Karla-ExtraLight.ttf");
+  src: url("../public/fonts/Karla-ExtraLight.ttf");
   font-weight: 100;
 }
 
 @font-face {
   font-family: "light";
-  src: url("./assests/Karla-Light.ttf");
+  src: url("../public/fonts/Karla-Light.ttf");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "regular";
-  src: url("./assests/Karla-Regular.ttf");
+  src: url("../public/fonts/Karla-Regular.ttf");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "bold";
-  src: url("./assests/Karla-Medium.ttf");
+  src: url("../public/fonts/Karla-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "extra-bold";
-  src: url("./assests/Karla-Bold.ttf");
+  src: url("../public/fonts/Karla-Bold.ttf");
   font-weight: 600;
 }
+
+/* Font size classes */
 
 .xs {
   font-size: 13px;
@@ -53,6 +64,8 @@
 .xl {
   font-size: 34px;
 }
+
+/* Font weight classes */
 
 .extra-light {
   font-family: "extra-light";
@@ -79,6 +92,8 @@
   font-weight: 600;
 }
 
+/* Color classes */
+
 .blue {
   color: #134db6;
 }
@@ -91,6 +106,8 @@
   color: #4a4a4a;
 }
 
+/* CSS  */
+
 .btn {
   outline: none;
   border: none;
@@ -100,7 +117,7 @@
 }
 
 .twitter {
-  background-image: url("./assests/twitter-thumb.png");
+  background-image: url("../public/images/twitter-thumb.png");
   background-size: cover;
   height: 2rem;
   width: 2rem;
@@ -109,7 +126,7 @@
 }
 
 .back {
-  background-image: url("./assests/arrow-back.svg");
+  background-image: url("../public/assests/arrow-back.svg");
   background-size: cover;
   height: 1.5rem;
   width: 1.5rem;
@@ -222,7 +239,7 @@
 }
 
 .checked {
-  background-image: url("./assests/completed.svg");
+  background-image: url("../public/assests/completed.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 2rem;
@@ -230,7 +247,7 @@
 }
 
 .unchecked {
-  background-image: url("./assests/pending.svg");
+  background-image: url("../public/assests/pending.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 2rem;
@@ -281,7 +298,7 @@
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  background-image: url("./assests/menu.svg");
+  background-image: url("../public/assests/menu.svg");
   background-size: cover;
   height: 2rem;
   width: 2rem;
@@ -326,7 +343,7 @@
 }
 
 .close-btn {
-  background-image: url("./assests/close.svg");
+  background-image: url("../public/assests/close.svg");
   background-size: cover;
   height: 1.5rem;
   width: 1.5rem;
@@ -367,7 +384,7 @@
 }
 
 .new {
-  background-image: url("./assests/new.png");
+  background-image: url("../public/images/new.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -377,7 +394,7 @@
 }
 
 .thing-img {
-  background-image: url('./assests/painter.png');
+  background-image: url("../public/images/painter.png");
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
